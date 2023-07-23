@@ -4,75 +4,56 @@ using UnityEngine;
 
 public class arrowButtons : MonoBehaviour
 {
+    public int firstPage = 0;
+    public int lastPage = 3;
+
     [SerializeField] Transform camTransform;
     [SerializeField] GameObject leftArrow;
     [SerializeField] GameObject rightArrow;
 
     [SerializeField] float moveAmount = 19;
 
-    [SerializeField] float firstScreenX = 0;
-    [SerializeField] float lastScreenX = 57;
+    int currentPage = 0;
 
-    int arrowState = 1; // 0 = all arrows are visible, 1 = must re-enable left arrow, 2 = must re-enable right arrow
 
+    private void Start()
+    {
+        updateArrows();
+    }
     public void moveCamRight()
     {
-        camTransform.position += new Vector3 (moveAmount, 0);
-
-        if (arrowState == 1)
+        if (isNotLastPage())
         {
-            leftArrow.SetActive(true);
-            arrowState = 0;
+            camTransform.position += new Vector3(moveAmount, 0);
+            currentPage += 1;
         }
-
-        if (camTransform.position.x >= lastScreenX)
-        {
-            //disable right arrow
-            rightArrow.SetActive(false);
-            arrowState = 2;
-        }
+        updateArrows();
     }
 
     public void moveCamLeft()
     {
-        camTransform.position -= new Vector3(moveAmount, 0);
-
-        if (arrowState == 2)
+        if (isNotFirstPage())
         {
-            rightArrow.SetActive(true);
-            arrowState = 0;
+            camTransform.position -= new Vector3(moveAmount, 0);
+            currentPage -= 1;
         }
-
-        if (camTransform.position.x <= firstScreenX)
-        {
-            //disable left arrow
-            leftArrow.SetActive(false);
-            arrowState = 1;
-        }
+        updateArrows();
     }
 
 
+    public void updateArrows()
+    {
+        leftArrow.SetActive(isNotFirstPage());
+        rightArrow.SetActive(isNotLastPage());
+    }
 
+    bool isNotFirstPage()
+    {
+        return currentPage > firstPage;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    bool isNotLastPage()
+    {
+        return currentPage < lastPage;
+    }
 }

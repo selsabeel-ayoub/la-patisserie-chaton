@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class arrowButtons : MonoBehaviour
+public class ArrowButtons : MonoBehaviour
 {
     public int firstPage = 0;
     public int lastPage = 3;

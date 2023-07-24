@@ -7,7 +7,7 @@ public class OrderController : MonoBehaviour, ISelectHandler
 {
     //2D Lists
     List<List<int>> newOrders = new List<List<int>>();
-    List<List<int>> currentOrders = new List<List<int>>();
+    List<List<int>> takenOrders = new List<List<int>>();
     List<List<int>> currentlyMade = new List<List<int>>();
 
     List<int> selectedOrder = new List<int>();
@@ -27,7 +27,7 @@ public class OrderController : MonoBehaviour, ISelectHandler
 
     //These are orders that have not been taken yet
     [ContextMenu("Add New Order")]
-    public void NewOrder() // call this funcion in update of fixed update after a certain amount of time
+    void NewOrder() // call this funcion in update of fixed update after a certain amount of time
     {
         //add DING UI appearing here
 
@@ -42,16 +42,33 @@ public class OrderController : MonoBehaviour, ISelectHandler
         newOrderIndex++;
     }
 
+    [ContextMenu("Take Order")]
     void takeOrder ()
     {
-        //once buton is pressed to take order, make ui appear, create new list in currentOrders, copy newOrder[0] to currentOrders, then delete newOrder[0]
-        //must also -1 from newOrderIndex!!
+        //when customer is pressed
+        //make order ui appear
+        //add to orer time it was taken
+
+        int item1 = newOrders[0][0]; //cookie type
+        int item2 = newOrders[0][1]; //cream type
+
+        int listLen = takenOrders.Count;
+
+        takenOrders.Add(new List<int>());
+
+        takenOrders[listLen].Add(item1);
+        takenOrders[listLen].Add(item2);
+
+        newOrders.RemoveAt(0);
+        newOrderIndex -= 1;
+
+        Debug.Log("cookie type: " + takenOrders[listLen][0] + " cream type:" + takenOrders[listLen][1]);
     }
 
     void SellOrder ()
     {
-        //only here set selectedOrder = currentOrders[selectedOrderNum] bc its only needed here so fo performance
-        selectedOrder = currentOrders[selectedOrderNum];
+        //only here set selectedOrder = takenOrders[selectedOrderNum] bc its only needed here so fo performance
+        selectedOrder = takenOrders[selectedOrderNum];
     }
 
 

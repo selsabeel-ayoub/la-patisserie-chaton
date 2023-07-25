@@ -1,10 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class OrderController : MonoBehaviour, ISelectHandler
+public class OrderController : MonoBehaviour
 {
     [SerializeField] Button orderButton;
     [SerializeField] Transform canvasPanelTransform;
@@ -18,18 +17,7 @@ public class OrderController : MonoBehaviour, ISelectHandler
 
     List<int> selectedOrder = new List<int>();
 
-    int selectedOrderNum;
     int newOrderIndex = 0;
-
-
-
-
-
-    public void OnSelect(BaseEventData eventData)
-    {
-        selectedOrderNum = transform.GetSiblingIndex();
-        Debug.Log(selectedOrderNum + " was selected");
-    }
 
 
     //These are orders that have not been taken yet
@@ -78,7 +66,7 @@ public class OrderController : MonoBehaviour, ISelectHandler
     void SellOrder ()
     {
         //only here set selectedOrder = takenOrders[selectedOrderNum] bc its only needed here so fo performance
-        selectedOrder = takenOrders[selectedOrderNum];
+        //selectedOrder = takenOrders[selectedOrderNum]; - get selectedOrderNum from other script
 
         //WHEN DELETING ORDER HAVE TO -1 FROM X POS OF orderUIPosition --> orderUIPosition -= new Vector2(60, 0);
         //have to move all the ui after it too sighghghgh

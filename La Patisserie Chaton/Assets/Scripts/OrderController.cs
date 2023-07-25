@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class OrderController : MonoBehaviour, ISelectHandler
 {
+    [SerializeField] Button orderButton;
+    [SerializeField] Transform canvasPanelTransform;
+
+    [SerializeField] Vector2 orderUIPosition = new Vector2(50, 330);
+
     //2D Lists
     List<List<int>> newOrders = new List<List<int>>();
     List<List<int>> takenOrders = new List<List<int>>();
@@ -13,9 +19,10 @@ public class OrderController : MonoBehaviour, ISelectHandler
     List<int> selectedOrder = new List<int>();
 
     int selectedOrderNum;
-
-
     int newOrderIndex = 0;
+
+
+
 
 
     public void OnSelect(BaseEventData eventData)
@@ -46,8 +53,11 @@ public class OrderController : MonoBehaviour, ISelectHandler
     void takeOrder ()
     {
         //when customer is pressed
-        //make order ui appear
-        //add to orer time it was taken
+        //add to order time it was taken
+
+        Instantiate(orderButton, orderUIPosition, Quaternion.identity, canvasPanelTransform); //(object, pos, roation, parent)
+        orderUIPosition += new Vector2(60, 0);
+
 
         int item1 = newOrders[0][0]; //cookie type
         int item2 = newOrders[0][1]; //cream type
@@ -69,9 +79,8 @@ public class OrderController : MonoBehaviour, ISelectHandler
     {
         //only here set selectedOrder = takenOrders[selectedOrderNum] bc its only needed here so fo performance
         selectedOrder = takenOrders[selectedOrderNum];
+
+        //WHEN DELETING ORDER HAVE TO -1 FROM X POS OF orderUIPosition --> orderUIPosition -= new Vector2(60, 0);
+        //have to move all the ui after it too sighghghgh
     }
-
-
-
-
 }

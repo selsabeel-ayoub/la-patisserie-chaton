@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b37beee8eeed4934996f183529e447d8
+guid: f7193021d1301e6458d7da161f745fed
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Macarons_Cream_0
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 65
+        width: 364
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77725ede1d68703428ebde81f3af11cd
+      internalID: 733038831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Macarons_Cream_1
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 72
+        width: 367
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34965880afe51e14ea2f6e69e7e12e0a
+      internalID: 1251890325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Macarons_Cream_2
+      rect:
+        serializedVersion: 2
+        x: 1141
+        y: 71
+        width: 366
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26c377c4a5792884e9e395b586ad3046
+      internalID: -1629635890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +195,10 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Macarons_Cream_0: 733038831
+      Macarons_Cream_1: 1251890325
+      Macarons_Cream_2: -1629635890
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,23 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
+
 
 public class OrderController : MonoBehaviour
 {
     [SerializeField] Button orderButton;
-    [SerializeField] Transform canvasPanelTransform;
+    GameObject canvasPanel; 
+    Transform canvasPanelTransform;
 
-    [SerializeField] Vector2 orderUIPosition = new Vector2(50, 330);
+    Vector2 orderUIPosition = new Vector2(50, 330);
 
     //2D Lists
     List<List<int>> newOrders = new List<List<int>>();
-    List<List<int>> takenOrders = new List<List<int>>();
+    public List<List<int>> takenOrders = new List<List<int>>();
     List<List<int>> currentlyMade = new List<List<int>>();
 
     List<int> selectedOrder = new List<int>();
 
     int newOrderIndex = 0;
 
+    private void Start()
+    {
+        canvasPanel = GameObject.FindWithTag("orderPanel");
+        canvasPanelTransform = canvasPanel.GetComponent<Transform>();
+    }
 
     //These are orders that have not been taken yet
     [ContextMenu("Add New Order")]
@@ -35,17 +43,20 @@ public class OrderController : MonoBehaviour
 
         Debug.Log(newOrderIndex + "cookie type: " + newOrders[newOrderIndex][0] + "cream type:" + newOrders[newOrderIndex][1]);
         newOrderIndex++;
+
+        //make sure list outside of function gets updated
+
     }
 
-    [ContextMenu("Take Order")]
-    void takeOrder ()
+   /* private void OnMouseDown()
     {
-        //when customer is pressed
+        TakeOrder();
+    }*/
+
+    [ContextMenu("Take Order")]
+    void TakeOrder ()
+    {
         //add to order time it was taken
-
-        Instantiate(orderButton, orderUIPosition, Quaternion.identity, canvasPanelTransform); //(object, pos, roation, parent)
-        orderUIPosition += new Vector2(60, 0);
-
 
         int item1 = newOrders[0][0]; //cookie type
         int item2 = newOrders[0][1]; //cream type
@@ -61,6 +72,9 @@ public class OrderController : MonoBehaviour
         newOrderIndex -= 1;
 
         Debug.Log("cookie type: " + takenOrders[listLen][0] + " cream type:" + takenOrders[listLen][1]);
+
+        Instantiate(orderButton, orderUIPosition, Quaternion.identity, canvasPanelTransform); //(object, pos, roation, parent)
+        orderUIPosition += new Vector2(60, 0);
     }
 
     void SellOrder ()

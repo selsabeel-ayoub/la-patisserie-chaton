@@ -30,35 +30,29 @@ public class OrderImageUI : MonoBehaviour
         //Cookie Type Image
         if (orderController.takenOrders[thisOrderNum][0] == 1)
         {
-            Debug.Log("cookies vanille");
             cookieType = vanillaMacaron;
         }
         else if (orderController.takenOrders[thisOrderNum][0] == 2)
         {
             cookieType = chocMacaron;
-            Debug.Log("cookies choc");
         }
         else
         {
             cookieType = strawbMacaron;
-            Debug.Log("cookies straw");
         }
 
         //Cream Type Image
         if (orderController.takenOrders[thisOrderNum][1] == 1)
         {
             creamType = vanillaCream;
-            Debug.Log("creams vanille");
         }
         else if (orderController.takenOrders[thisOrderNum][1] == 2)
         {
             creamType = chocCream;
-            Debug.Log("creams choc");
         }
         else
         {
             creamType = strawbCream;
-            Debug.Log("creams straw");
         }
 
         //Setting the Images

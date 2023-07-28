@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 618013623}
   - component: {fileID: 618013622}
   m_Layer: 5
-  m_Name: Arrows Canvas
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,6 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1238323849}
   - component: {fileID: 1238323848}
+  - component: {fileID: 1238323850}
   m_Layer: 0
   m_Name: Order Controller
   m_TagString: orderController
@@ -963,7 +964,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a571ec19979f24d910ec5d4c2d9815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  newOrderInterval: 30
+  newOrderTextWait: 2
+  newOrderText: {fileID: 3636786150581910561, guid: c670d82c5f420d0439dc0aa8d900e0dc, type: 3}
   orderButton: {fileID: 3024262736518360228, guid: 6d7d8c06892c96f4a90fd535c34d4e4b, type: 3}
+  canvas: {fileID: 618013625}
 --- !u!4 &1238323849
 Transform:
   m_ObjectHideFlags: 0
@@ -979,6 +984,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1238323850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238323847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d102bac8d965c842bce4814d1f0575f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1339292070
 GameObject:
   m_ObjectHideFlags: 0

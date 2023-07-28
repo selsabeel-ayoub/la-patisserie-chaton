@@ -11,9 +11,7 @@ public class OrderController : MonoBehaviour
 
     [SerializeField] int newOrderInterval = 30;
 
-    [SerializeField] int score = 0;
-    [SerializeField] int minTimePoints = 5;
-    [SerializeField] int selectionPoints = 8;
+    [SerializeField] int stars = 0;
 
     [SerializeField] int scoreMinTime = 30;
     [SerializeField] int scoreMaxTime = 60;
@@ -173,28 +171,28 @@ public class OrderController : MonoBehaviour
     {
         /* if (selectedOrder[0] == currentlyMade[0][0]) //Check if cookie type is the same
          {
-             score += selectionPoints;
+             stars++;
          }
 
          if (selectedOrder[1] == currentlyMade[0][1]) //Check if cream type is the same
          {
-             score += selectionPoints;
+             stars ++;
          }*/
 
-        if ((selectedOrder[3] - selectedOrder[2]) < scoreMinTime) // change this to a variable 
+        if ((selectedOrder[3] - selectedOrder[2]) < scoreMinTime)
         {
-            score += 3 * minTimePoints; // change this to variable;
+            stars += 3; 
         }
-        else if ((selectedOrder[3] - selectedOrder[2]) > scoreMaxTime) // change this to a variable
+        else if ((selectedOrder[3] - selectedOrder[2]) > scoreMaxTime)
         {
-            score += minTimePoints; // change this to variable;
+            stars ++; 
         }
         else
         {
-            score += 2 * minTimePoints; // change this to variable;
+            stars += 2;
         }
 
-        scoreText.text = "Score: " + score;
+        scoreText.text = stars.ToString();
         //when done scoring must reset selectedOrder list
         //remember to also reset/delete CurrentlyMade[0]
 

@@ -32,6 +32,7 @@ public class OrderController : MonoBehaviour
     int slotAmt = 10;
 
     bool newOrderFncExecuted = false;
+    [HideInInspector] public bool canTakeOrder;
 
 
 
@@ -85,8 +86,10 @@ public class OrderController : MonoBehaviour
     [ContextMenu("Take Order")]
     public void TakeOrder ()
     {
-        if (newOrders.Count > 0)
+        if ((newOrders.Count > 0) && (takenOrders.Count < slotAmt))
         {
+            canTakeOrder = true;
+
             int item1 = newOrders[0][0]; //cookie type
             int item2 = newOrders[0][1]; //cream type
 
@@ -112,6 +115,10 @@ public class OrderController : MonoBehaviour
             }
 
             Instantiate(orderButton, orderSlots[slotIndex].position, Quaternion.identity, orderSlots[slotIndex]); //(object, pos, roation, parent)
+        }
+        else
+        {
+            canTakeOrder = false;
         }
     }
 

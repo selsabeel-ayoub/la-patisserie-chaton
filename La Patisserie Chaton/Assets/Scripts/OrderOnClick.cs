@@ -17,7 +17,10 @@ public class OrderOnClick : MonoBehaviour
     private void OnMouseDown()
     {
         orderController.TakeOrder();
-        StartCoroutine(AnimCoroutine());
+        if (orderController.canTakeOrder == true)
+        {
+            StartCoroutine(AnimCoroutine());
+        }
     }
 
     IEnumerator AnimCoroutine ()

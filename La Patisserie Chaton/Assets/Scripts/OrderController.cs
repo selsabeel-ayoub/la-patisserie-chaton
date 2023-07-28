@@ -10,11 +10,19 @@ public class OrderController : MonoBehaviour
     OrderSelection orderSelection;
 
     [SerializeField] int newOrderInterval = 30;
-    [SerializeField] int newOrderTextWait = 2;
+
+    [SerializeField] int score = 0;
+    [SerializeField] int minTimePoints = 5;
+    [SerializeField] int selectionPoints = 8;
+
+    [SerializeField] int scoreMinTime = 30;
+    [SerializeField] int scoreMaxTime = 60;
+
 
     [SerializeField] GameObject newOrderText;
     [SerializeField] Button orderButton;
     [SerializeField] Transform canvas;
+    [SerializeField] Text scoreText;
 
     GameObject canvasPanel;
     [SerializeField] Transform[] orderSlots;
@@ -26,9 +34,8 @@ public class OrderController : MonoBehaviour
 
     List<int> selectedOrder = new List<int>();
 
-    public int score = 0;
-    public int selectionPoints = 8;
 
+    int newOrderTextWait = 2;
     int newOrderIndex = 0;
     int selectedOrderNum;
     int slotIndex;
@@ -164,31 +171,30 @@ public class OrderController : MonoBehaviour
 
     void Scoring()
     {
-       /* if (selectedOrder[0] == currentlyMade[0][0]) //Check if cookie type is the same
+        /* if (selectedOrder[0] == currentlyMade[0][0]) //Check if cookie type is the same
+         {
+             score += selectionPoints;
+         }
+
+         if (selectedOrder[1] == currentlyMade[0][1]) //Check if cream type is the same
+         {
+             score += selectionPoints;
+         }*/
+
+        if ((selectedOrder[3] - selectedOrder[2]) < scoreMinTime) // change this to a variable 
         {
-            score += selectionPoints;
+            score += 3 * minTimePoints; // change this to variable;
+        }
+        else if ((selectedOrder[3] - selectedOrder[2]) > scoreMaxTime) // change this to a variable
+        {
+            score += minTimePoints; // change this to variable;
+        }
+        else
+        {
+            score += 2 * minTimePoints; // change this to variable;
         }
 
-        if (selectedOrder[1] == currentlyMade[0][1]) //Check if cream type is the same
-        {
-            score += selectionPoints;
-        }*/
-
-        if ((selectedOrder[3] - selectedOrder[2]) < 30) // change this to a variable 
-        {
-            score += 15; // change this to variable;
-        }
-        else if (((selectedOrder[3] - selectedOrder[2]) < 60) && ((selectedOrder[2] - selectedOrder[3]) > 30)) // change this to a variable
-        {
-            score += 10; // change this to variable;
-        }
-        else if ((selectedOrder[3] - selectedOrder[2]) > 60) // change this to a variable
-        {
-            score += 5; // change this to variable;
-        }
-/*
-        Debug.Log(score);*/
-
+        scoreText.text = "Score: " + score;
         //when done scoring must reset selectedOrder list
         //remember to also reset/delete CurrentlyMade[0]
 

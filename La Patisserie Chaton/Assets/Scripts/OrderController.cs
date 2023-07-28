@@ -58,11 +58,10 @@ public class OrderController : MonoBehaviour
         }
     }
 
-    //These are orders that have not been taken yet
+    //Orders that have not been taken yet
     [ContextMenu("Add New Order")]
-    void NewOrder() // call this funcion in update of fixed update after a certain amount of time
+    void NewOrder()
     {
-
         int cookieType = Random.Range(1, 4); // 1 = vanilla, 2 = choc, 3 = strawb
         int creamType = Random.Range(1, 4); // 1 = vanilla, 2 = choc, 3 = strawb
 
@@ -128,7 +127,6 @@ public class OrderController : MonoBehaviour
     [ContextMenu("Sell Order")]
     void SellOrder ()
     {
-
         selectedOrderNum = OrderSelection.selectedOrderNum;
 
         if (selectedOrderNum >= 0)
@@ -140,10 +138,25 @@ public class OrderController : MonoBehaviour
             selectedOrder = takenOrders[selectedOrderNum]; //this is to compare currentlyMade to it when scoring
             takenOrders.RemoveAt(selectedOrderNum);
 
-            Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
+            if (orderSlots[selectedOrderNum + 1].childCount > 0) // if the slot after the sold slot is not empty
+            {
+                for (int i = selectedOrderNum + 1; i <= slotAmt; i++)
+                {
+                    if (orderSlots[i].childCount > 0) //if slot it being used
+                    {
+                        Debug.Log("child position: " + orderSlots[i].GetChild(0).position);
+                        orderSlots[i].GetChild(0).position = orderSlots[i - 1].position; //Move position
 
-            //move all the ui after it too sigh
-            //check slots after orderslots[selectedordernum] w a loop and if they have a child, set their parents to the slot before, and move them
+                        orderSlots[i].GetChild(0).SetParent(orderSlots[i - 1]); //Set parent
+                    }
+                    else //if any slot after is empty, stop checking if slots are empty/full 
+                    {
+                        break;
+                    }
+                }
+            }
+
+            Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
 
             Scoring();
         }
@@ -161,20 +174,20 @@ public class OrderController : MonoBehaviour
             score += selectionPoints;
         }*/
 
-        if ((selectedOrder[2] - selectedOrder[3]) < 30) // change this to a variable 
+        if ((selectedOrder[3] - selectedOrder[2]) < 30) // change this to a variable 
         {
             score += 15; // change this to variable;
         }
-        else if (((selectedOrder[2] - selectedOrder[3]) < 60) && ((selectedOrder[2] - selectedOrder[3]) > 30)) // change this to a variable
+        else if (((selectedOrder[3] - selectedOrder[2]) < 60) && ((selectedOrder[2] - selectedOrder[3]) > 30)) // change this to a variable
         {
             score += 10; // change this to variable;
         }
-        else if ((selectedOrder[2] - selectedOrder[3]) > 60) // change this to a variable
+        else if ((selectedOrder[3] - selectedOrder[2]) > 60) // change this to a variable
         {
             score += 5; // change this to variable;
         }
-
-        Debug.Log(score);
+/*
+        Debug.Log(score);*/
 
         //when done scoring must reset selectedOrder list
         //remember to also reset/delete CurrentlyMade[0]

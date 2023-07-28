@@ -10,13 +10,11 @@ public class OrderSelection : MonoBehaviour, ISelectHandler, IDeselectHandler
 
     public void OnSelect(BaseEventData eventData)
     {
-        selectedOrderNum = transform.GetSiblingIndex();
-        Debug.Log(selectedOrderNum + " was selected");
+        selectedOrderNum = transform.parent.transform.GetSiblingIndex();
     }
 
     public void OnDeselect (BaseEventData eventData)
     {
         selectedOrderNum = -1;
-        Debug.Log("deselected");
     }
 }

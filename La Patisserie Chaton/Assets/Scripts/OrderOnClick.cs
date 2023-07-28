@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class OrderOnClick : MonoBehaviour
 {
-    public OrderController orderController;
+    OrderController orderController;
+    Animator catAnimator;
+
+    [SerializeField] int animWait = 2;
+
     private void Awake()
     {
         orderController = GameObject.FindWithTag("orderController").GetComponent<OrderController>();
+        catAnimator = GetComponent<Animator>();
     }
     private void OnMouseDown()
     {
         orderController.TakeOrder();
+        StartCoroutine(AnimCoroutine());
+    }
 
-        //play animation
+    IEnumerator AnimCoroutine ()
+    {
+        catAnimator.SetBool("isTalking", true);
+        yield return new WaitForSeconds(animWait);
+        catAnimator.SetBool("isTalking", false);
     }
 }

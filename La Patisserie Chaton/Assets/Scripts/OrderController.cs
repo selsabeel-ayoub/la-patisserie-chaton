@@ -16,10 +16,8 @@ public class OrderController : MonoBehaviour
     [SerializeField] Button orderButton;
     [SerializeField] Transform canvas;
 
-    GameObject canvasPanel; 
-    Transform canvasPanelTransform;
-
-    Vector2 orderUIPosition = new Vector2(50, 330);
+    GameObject canvasPanel;
+    [SerializeField] Transform[] orderSlots;
 
     //2D Lists
     List<List<int>> newOrders = new List<List<int>>();
@@ -30,6 +28,8 @@ public class OrderController : MonoBehaviour
 
     int newOrderIndex = 0;
     int selectedOrderNum;
+    int slotIndex;
+    int slotAmt = 10;
 
     bool newOrderFncExecuted = false;
 
@@ -37,10 +37,8 @@ public class OrderController : MonoBehaviour
 
     private void Start()
     {
-        canvasPanel = GameObject.FindWithTag("orderPanel");
-        canvasPanelTransform = canvasPanel.GetComponent<Transform>();
-
         orderSelection = GetComponent<OrderSelection>();
+        canvasPanel = GameObject.FindWithTag("orderPanel");
     }
 
     private void Update()
@@ -105,8 +103,15 @@ public class OrderController : MonoBehaviour
 
             Debug.Log("cookie type: " + takenOrders[listLen][0] + " cream type:" + takenOrders[listLen][1]);
 
-            Instantiate(orderButton, orderUIPosition, Quaternion.identity, canvasPanelTransform); //(object, pos, roation, parent)
-            orderUIPosition += new Vector2(60, 0);
+            for (slotIndex = 0; slotIndex <= slotAmt; slotIndex++)
+            {
+                if (orderSlots[slotIndex].transform.childCount <= 0)
+                {
+                    break;
+                }
+            }
+
+            Instantiate(orderButton, orderSlots[slotIndex].position, Quaternion.identity, orderSlots[slotIndex]); //(object, pos, roation, parent)
         }
     }
 
@@ -124,13 +129,17 @@ public class OrderController : MonoBehaviour
 
             selectedOrder = takenOrders[selectedOrderNum]; //this is to compare currentlyMade to it when scoring
             takenOrders.RemoveAt(selectedOrderNum);
-            Destroy(canvasPanel.transform.GetChild(selectedOrderNum).gameObject);
+
+            Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
+
+            //move all the ui after it too sigh
+            //check slots after orderslots[selectedordernum] w a loop and if they have a child, set their parents to the slot before, and move them
+
 
             //remember to also reset/delete "CurrentlyMade"
 
             //do scoring function()
 
-            //move all the ui after it too sigh
         }
     }
 

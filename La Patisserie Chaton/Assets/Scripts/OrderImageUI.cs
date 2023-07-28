@@ -56,7 +56,7 @@ public class OrderImageUI : MonoBehaviour
         }
 
         //Setting the Images
-        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = cookieType;
-        gameObject.transform.GetChild(1).GetComponent<Image>().sprite = creamType;
+        gameObject.transform.GetChild(1).GetComponent<Image>().sprite = cookieType;
+        gameObject.transform.GetChild(0).GetComponent<Image>().sprite = creamType;
     }
 }

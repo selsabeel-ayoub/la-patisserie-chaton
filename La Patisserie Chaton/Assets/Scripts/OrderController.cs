@@ -22,14 +22,17 @@ public class OrderController : MonoBehaviour
     //2D Lists
     List<List<int>> newOrders = new List<List<int>>();
     public List<List<int>> takenOrders = new List<List<int>>(); // [cookie type, cream type, time taken, time sold]
-    List<List<int>> currentlyMade = new List<List<int>>();
+    public List<List<int>> currentlyMade = new List<List<int>>();
 
     List<int> selectedOrder = new List<int>();
+
+    public int score = 0;
+    public int selectionPoints = 8;
 
     int newOrderIndex = 0;
     int selectedOrderNum;
     int slotIndex;
-    int slotAmt = 10;
+    int slotAmt = 9;
 
     bool newOrderFncExecuted = false;
     [HideInInspector] public bool canTakeOrder;
@@ -142,14 +145,40 @@ public class OrderController : MonoBehaviour
             //move all the ui after it too sigh
             //check slots after orderslots[selectedordernum] w a loop and if they have a child, set their parents to the slot before, and move them
 
-
-            //remember to also reset/delete "CurrentlyMade"
-
-            //do scoring function()
-
+            Scoring();
         }
     }
 
-    //when done scoring must reset selectedOrder list
+    void Scoring()
+    {
+       /* if (selectedOrder[0] == currentlyMade[0][0]) //Check if cookie type is the same
+        {
+            score += selectionPoints;
+        }
+
+        if (selectedOrder[1] == currentlyMade[0][1]) //Check if cream type is the same
+        {
+            score += selectionPoints;
+        }*/
+
+        if ((selectedOrder[2] - selectedOrder[3]) < 30) // change this to a variable 
+        {
+            score += 15; // change this to variable;
+        }
+        else if (((selectedOrder[2] - selectedOrder[3]) < 60) && ((selectedOrder[2] - selectedOrder[3]) > 30)) // change this to a variable
+        {
+            score += 10; // change this to variable;
+        }
+        else if ((selectedOrder[2] - selectedOrder[3]) > 60) // change this to a variable
+        {
+            score += 5; // change this to variable;
+        }
+
+        Debug.Log(score);
+
+        //when done scoring must reset selectedOrder list
+        //remember to also reset/delete CurrentlyMade[0]
+
+    }
 
 }

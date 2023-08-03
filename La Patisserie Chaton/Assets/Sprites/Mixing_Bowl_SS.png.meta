@@ -1,0 +1,523 @@
+fileFormatVersion: 2
+guid: 1b6404983e79c403d9ea859ac63cac8b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1453
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.4837431, y: 0.33790708}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8790b6b23d97745e4914fce3bc8809d1
+      internalID: -743826732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_1
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1398
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.49986076, y: 0.34104532}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e1c5f6bd6fb641ca88e8848e7c684cd
+      internalID: 1233058230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_2
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 1449
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.3671998, y: 0.29653817}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03ebc16e8349a4d979f90c3b9c588fb9
+      internalID: -1642444678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_3
+      rect:
+        serializedVersion: 2
+        x: 2380
+        y: 1453
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.43164548, y: 0.29899335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a8316b839cd4849b8b1b238a63e1ed
+      internalID: -764891490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_4
+      rect:
+        serializedVersion: 2
+        x: 3163
+        y: 1435
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.5153989, y: 0.3156127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd43c9b1787248429f3bb416bdcc958
+      internalID: 215898615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_5
+      rect:
+        serializedVersion: 2
+        x: 4167
+        y: 1453
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.32659203, y: 0.30925432}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f15422ba914842e68c47796717d5ac9
+      internalID: -332685059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 727.3333
+        width: 852.8333
+        height: 726.6667
+      alignment: 9
+      pivot: {x: 0.48038366, y: 0.4050335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3ec17ca5076c4abcbeff14ddb5172f8
+      internalID: -1009321086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_7
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 727
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.4852906, y: 0.39069477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c507d32ec2cc4eecb171ea792f6ab2a
+      internalID: 602320794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_8
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 727
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.36271253, y: 0.3360421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 542cbe75293c541dd934028d2d30f02e
+      internalID: -555225680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_9
+      rect:
+        serializedVersion: 2
+        x: 2329
+        y: 732
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.4967323, y: 0.33512667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0dfbdea17d64842a3be0093cfff7bb
+      internalID: 763521603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_10
+      rect:
+        serializedVersion: 2
+        x: 3182
+        y: 741
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.42157075, y: 0.2967839}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734be3da43ed64d69a414cc69f3931ea
+      internalID: 1715743083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_11
+      rect:
+        serializedVersion: 2
+        x: 4029
+        y: 727
+        width: 853
+        height: 727
+      alignment: 9
+      pivot: {x: 0.4575178, y: 0.3466294}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c793cf61f10e3418586d589d38354721
+      internalID: 337308425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1.333313
+        width: 852.8333
+        height: 726.6667
+      alignment: 9
+      pivot: {x: 0.5704055, y: 0.37605557}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a57f596dd3c543afbc799a28bde7479
+      internalID: -1891834831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_13
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 1.333313
+        width: 852.8333
+        height: 726.6667
+      alignment: 9
+      pivot: {x: 0.57040536, y: 0.38018703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51172daafb6964286b6a4162d9ab60b0
+      internalID: 916648445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_14
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1.333313
+        width: 852.8333
+        height: 726.6667
+      alignment: 9
+      pivot: {x: 0.6586504, y: 0.42552164}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfadbafc68f24725a2e8be30de780a5
+      internalID: -2082302259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_15
+      rect:
+        serializedVersion: 2
+        x: 2556
+        y: 1.333313
+        width: 852.8333
+        height: 726.6667
+      alignment: 9
+      pivot: {x: 0.6445482, y: 0.40483326}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80700e806cb294638b5d9d36978f9fbb
+      internalID: 1537527535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_16
+      rect:
+        serializedVersion: 2
+        x: 3408
+        y: 1.333313
+        width: 852.8333
+        height: 726.6667
+      alignment: 9
+      pivot: {x: 0.6057669, y: 0.43379703}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea83ce5fced154e8488cb183df32136e
+      internalID: 11220995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mixing_Bowl_SS_17
+      rect:
+        serializedVersion: 2
+        x: 4260
+        y: 1.333313
+        width: 852.8333
+        height: 726.6667
+      alignment: 9
+      pivot: {x: 0.52115345, y: 0.4462101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01de03d9632c940af82e13a7e912154f
+      internalID: -1655567949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Mixing_Bowl_SS_0: -743826732
+      Mixing_Bowl_SS_1: 1233058230
+      Mixing_Bowl_SS_10: 1715743083
+      Mixing_Bowl_SS_11: 337308425
+      Mixing_Bowl_SS_12: -1891834831
+      Mixing_Bowl_SS_13: 916648445
+      Mixing_Bowl_SS_14: -2082302259
+      Mixing_Bowl_SS_15: 1537527535
+      Mixing_Bowl_SS_16: 11220995
+      Mixing_Bowl_SS_17: -1655567949
+      Mixing_Bowl_SS_2: -1642444678
+      Mixing_Bowl_SS_3: -764891490
+      Mixing_Bowl_SS_4: 215898615
+      Mixing_Bowl_SS_5: -332685059
+      Mixing_Bowl_SS_6: -1009321086
+      Mixing_Bowl_SS_7: 602320794
+      Mixing_Bowl_SS_8: -555225680
+      Mixing_Bowl_SS_9: 763521603
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

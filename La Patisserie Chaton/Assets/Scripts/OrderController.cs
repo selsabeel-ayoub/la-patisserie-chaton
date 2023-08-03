@@ -130,7 +130,7 @@ public class OrderController : MonoBehaviour
     }
 
     [ContextMenu("Sell Order")]
-    void SellOrder ()
+    public void SellOrder ()
     {
         selectedOrderNum = OrderSelection.selectedOrderNum;
 

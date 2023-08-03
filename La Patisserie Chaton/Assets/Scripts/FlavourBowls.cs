@@ -22,7 +22,7 @@ public class FlavourBowls : MonoBehaviour
         orderController.currentlyMade.Add(new List<int>());
         orderController.currentlyMade[currentIndex].Add(flavourType);
 
-        Debug.Log("cream flavour chosen:" + orderController.currentlyMade[0][0]);
+        Debug.Log("cookie flavour chosen:" + orderController.currentlyMade[currentIndex][0]);
 
         //disable the triggercolliders of all of them once one is chosen, remmeber to re-enable when this one is over on next screen
     }

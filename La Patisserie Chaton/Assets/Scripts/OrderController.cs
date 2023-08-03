@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-
+using UnityEngine.Playables;
 
 public class OrderController : MonoBehaviour
 {
@@ -11,7 +11,6 @@ public class OrderController : MonoBehaviour
 
     [SerializeField] int newOrderInterval = 30;
 
-    [SerializeField] int stars = 0;
 
     [SerializeField] int scoreMinTime = 30;
     [SerializeField] int scoreMaxTime = 60;
@@ -21,17 +20,36 @@ public class OrderController : MonoBehaviour
     [SerializeField] Button orderButton;
     [SerializeField] Transform canvas;
     [SerializeField] Text scoreText;
+    [SerializeField] Sprite filledStarSprite;
+    [SerializeField] Sprite emptyStarSprite;
+    [SerializeField] PlayableDirector sellingTimeline;
+
+    //    [SerializeField] BoxCollider2D[] creamColliders;
+
 
     GameObject canvasPanel;
     [SerializeField] Transform[] orderSlots;
+    [SerializeField] SpriteRenderer[] starSprites;
 
     //2D Lists
-    List<List<int>> newOrders = new List<List<int>>();
-    public List<List<int>> takenOrders = new List<List<int>>(); // [cookie type, cream type, time taken, time sold]
-    public List<List<int>> currentlyMade = new List<List<int>>();
+    List<List<int>> newOrders = new List<List<int>>(); // [cookie type, cream type]
+    public List<List<int>> takenOrders = new List<List<int>>(); // [screen, cookie type, cream type, time taken, time sold]
+    public List<List<int>> currentlyMade = new List<List<int>>(); // [cookie type, cream type]
 
     List<int> selectedOrder = new List<int>();
 
+    int totalStars = 0;
+    int stars = 0;
+
+
+    [HideInInspector] public int screenIndex = 0;
+    [HideInInspector] public int cookieTypeIndex = 1;
+    [HideInInspector] public int creamTypeIndex = 2;
+    int timeTakenIndex = 3;
+    int timeSoldIndex = 4;
+
+
+    int flavourNum = 3;
 
     int newOrderTextWait = 2;
     int newOrderIndex = 0;
@@ -41,8 +59,6 @@ public class OrderController : MonoBehaviour
 
     bool newOrderFncExecuted = false;
     [HideInInspector] public bool canTakeOrder;
-
-
 
     private void Start()
     {
@@ -67,8 +83,8 @@ public class OrderController : MonoBehaviour
     [ContextMenu("Add New Order")]
     void NewOrder()
     {
-        int cookieType = Random.Range(0, 3); // 0 = vanilla, 1 = choc, 2 = strawb
-        int creamType = Random.Range(0, 3); // 0 = vanilla, 1 = choc, 2 = strawb
+        int cookieType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
+        int creamType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
 
         newOrders.Add(new List<int>());
         newOrders[newOrderIndex].Add(cookieType);
@@ -104,14 +120,15 @@ public class OrderController : MonoBehaviour
 
             takenOrders.Add(new List<int>());
 
-            takenOrders[listLen].Add(item1);
+            takenOrders[listLen].Add(0); // screen
+            takenOrders[listLen].Add(item1); 
             takenOrders[listLen].Add(item2);
             takenOrders[listLen].Add((int)Time.time);
 
             newOrders.RemoveAt(0);
             newOrderIndex -= 1;
 
-            Debug.Log("cookie type: " + takenOrders[listLen][0] + " cream type:" + takenOrders[listLen][1]);
+            Debug.Log("cookie type: " + takenOrders[listLen][cookieTypeIndex] + " cream type:" + takenOrders[listLen][creamTypeIndex]);
 
             for (slotIndex = 0; slotIndex <= slotAmt; slotIndex++)
             {
@@ -132,13 +149,23 @@ public class OrderController : MonoBehaviour
     [ContextMenu("Sell Order")]
     public void SellOrder ()
     {
+        for (int i = 0; i < 5; i++) // reset star sprites
+        {
+            starSprites[i].sprite = emptyStarSprite;
+        }
+
         selectedOrderNum = OrderSelection.selectedOrderNum;
 
         if (selectedOrderNum >= 0)
         {
             takenOrders[selectedOrderNum].Add((int)Time.time); //adding the current time as the "time sold" for the order
 
-            //play a timeline
+
+            /*for (int x = 0; x < flavourNum; x++) //disable all the cream colliders 
+            {
+                creamColliders[x].enabled = false;
+                //reenable when timelines over
+            }*/
 
             selectedOrder = takenOrders[selectedOrderNum]; //this is to compare currentlyMade to it when scoring
             takenOrders.RemoveAt(selectedOrderNum);
@@ -163,28 +190,30 @@ public class OrderController : MonoBehaviour
             Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
 
             Scoring();
+
+            sellingTimeline.Play();
         }
     }
 
     void Scoring()
     {
-        if (selectedOrder[0] == currentlyMade[0][0]) //Check if cookie type is the same
+        if (selectedOrder[cookieTypeIndex] == currentlyMade[0][0]) //Check if cookie type is the same
          {
             stars++;
             Debug.Log("correct cookie flavour");
          }
 
-        if (selectedOrder[1] == currentlyMade[0][1]) //Check if cream type is the same
+        if (selectedOrder[creamTypeIndex] == currentlyMade[0][1]) //Check if cream type is the same
          {
              stars ++;
             Debug.Log("correct cream flavour");
         }
 
-        if ((selectedOrder[3] - selectedOrder[2]) < scoreMinTime)
+        if ((selectedOrder[timeSoldIndex] - selectedOrder[timeTakenIndex]) < scoreMinTime)
         {
             stars += 3; 
         }
-        else if ((selectedOrder[3] - selectedOrder[2]) > scoreMaxTime)
+        else if ((selectedOrder[timeSoldIndex] - selectedOrder[timeTakenIndex]) > scoreMaxTime)
         {
             stars ++; 
         }
@@ -193,7 +222,16 @@ public class OrderController : MonoBehaviour
             stars += 2;
         }
 
-        scoreText.text = stars.ToString();
+        for (int i = 0; i < stars; i++)
+        {
+            starSprites[i].sprite = filledStarSprite;
+            //remember to reset all sprites to unfilled after
+        }
+
+        totalStars += stars;
+        stars = 0;
+
+        scoreText.text = totalStars.ToString();
 
         selectedOrder = new List<int>(); //reset selectedOrder
         currentlyMade.RemoveAt(0); // delete the most current currently made

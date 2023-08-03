@@ -67,8 +67,8 @@ public class OrderController : MonoBehaviour
     [ContextMenu("Add New Order")]
     void NewOrder()
     {
-        int cookieType = Random.Range(1, 4); // 1 = vanilla, 2 = choc, 3 = strawb
-        int creamType = Random.Range(1, 4); // 1 = vanilla, 2 = choc, 3 = strawb
+        int cookieType = Random.Range(0, 3); // 0 = vanilla, 1 = choc, 2 = strawb
+        int creamType = Random.Range(0, 3); // 0 = vanilla, 1 = choc, 2 = strawb
 
         newOrders.Add(new List<int>());
         newOrders[newOrderIndex].Add(cookieType);
@@ -149,7 +149,6 @@ public class OrderController : MonoBehaviour
                 {
                     if (orderSlots[i].childCount > 0) //if slot it being used
                     {
-                        Debug.Log("child position: " + orderSlots[i].GetChild(0).position);
                         orderSlots[i].GetChild(0).position = orderSlots[i - 1].position; //Move position
 
                         orderSlots[i].GetChild(0).SetParent(orderSlots[i - 1]); //Set parent
@@ -169,15 +168,17 @@ public class OrderController : MonoBehaviour
 
     void Scoring()
     {
-        /* if (selectedOrder[0] == currentlyMade[0][0]) //Check if cookie type is the same
+        if (selectedOrder[0] == currentlyMade[0][0]) //Check if cookie type is the same
          {
-             stars++;
+            stars++;
+            Debug.Log("correct cookie flavour");
          }
 
-         if (selectedOrder[1] == currentlyMade[0][1]) //Check if cream type is the same
+        if (selectedOrder[1] == currentlyMade[0][1]) //Check if cream type is the same
          {
              stars ++;
-         }*/
+            Debug.Log("correct cream flavour");
+        }
 
         if ((selectedOrder[3] - selectedOrder[2]) < scoreMinTime)
         {
@@ -193,9 +194,8 @@ public class OrderController : MonoBehaviour
         }
 
         scoreText.text = stars.ToString();
-        //when done scoring must reset selectedOrder list
-        //remember to also reset/delete CurrentlyMade[0]
 
+        selectedOrder = new List<int>(); //reset selectedOrder
+        currentlyMade.RemoveAt(0); // delete the most current currently made
     }
-
 }

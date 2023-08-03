@@ -28,11 +28,11 @@ public class OrderImageUI : MonoBehaviour
         thisOrderNum = orderController.takenOrders.Count - 1;
 
         //Cookie Type Image
-        if (orderController.takenOrders[thisOrderNum][0] == 1)
+        if (orderController.takenOrders[thisOrderNum][0] == 0)
         {
             cookieType = vanillaMacaron;
         }
-        else if (orderController.takenOrders[thisOrderNum][0] == 2)
+        else if (orderController.takenOrders[thisOrderNum][0] == 1)
         {
             cookieType = chocMacaron;
         }
@@ -42,11 +42,11 @@ public class OrderImageUI : MonoBehaviour
         }
 
         //Cream Type Image
-        if (orderController.takenOrders[thisOrderNum][1] == 1)
+        if (orderController.takenOrders[thisOrderNum][1] == 0)
         {
             creamType = vanillaCream;
         }
-        else if (orderController.takenOrders[thisOrderNum][1] == 2)
+        else if (orderController.takenOrders[thisOrderNum][1] == 1)
         {
             creamType = chocCream;
         }

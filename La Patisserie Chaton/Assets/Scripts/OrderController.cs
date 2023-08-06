@@ -96,7 +96,7 @@ public class OrderController : MonoBehaviour
         newOrders[newOrderIndex].Add(cookieType);
         newOrders[newOrderIndex].Add(creamType);
 
-        Debug.Log(newOrderIndex + "cookie type: " + newOrders[newOrderIndex][0] + "cream type:" + newOrders[newOrderIndex][1]);
+        Debug.Log(newOrderIndex + "cookie type: " + newOrders[newOrderIndex][cookieTypeIndex] + "cream type:" + newOrders[newOrderIndex][creamTypeIndex]);
         newOrderIndex++;
 
         if (Time.time != 0)

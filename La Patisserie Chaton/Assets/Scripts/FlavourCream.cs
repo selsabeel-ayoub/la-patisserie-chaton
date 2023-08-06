@@ -17,6 +17,6 @@ public class FlavourCream : MonoBehaviour
     {
         //only let choose cream if there is a cookie on the screen
         orderController.currentlyMade[0].Add(flavourType);
-        Debug.Log("cream flavour chosen:" + orderController.currentlyMade[0][1]);
+        Debug.Log("cream flavour chosen:" + orderController.currentlyMade[0][2]);
     }
 }

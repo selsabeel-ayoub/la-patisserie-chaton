@@ -5,11 +5,13 @@ using UnityEngine.Playables;
 
 public class ObjectController : MonoBehaviour
 {
+    public bool ovenEmpty = true;
+
     [SerializeField] OrderController orderController;
     [SerializeField] BoxCollider2D[] flavBowlColliders;
     [SerializeField] PlayableDirector bowlsToPanPlayable;
 
-    //change later to just one gameobject with sprite changing
+    //change later to just one gameobject with sprite changing (Gameobject ovenPan)
     [SerializeField] GameObject vanPan;
     [SerializeField] GameObject chocPan;
     [SerializeField] GameObject strawPan;
@@ -18,13 +20,11 @@ public class ObjectController : MonoBehaviour
     int macTypeIndex;
     //int cremTypeIndex;
 
-
     int macFlavorNum = 3;
     //int cremFlavorNum = 3;
 
     int firstInOvenBacklog; // better name?
 
-    bool ovenEmpty = true;
 
     private void Start()
     {
@@ -79,18 +79,13 @@ public class ObjectController : MonoBehaviour
         }
     }
 
-    //THIS MUST BE TESTED STILl!!!! - is x the correct number - is the next one up for ove nslot the correct order - do all screenindexes change properly
-    void MoveInOven()
+    public void MoveInOven()
     {
-        //gets triggered when trigger collider of pan is over oven + oven is open
-        if (ovenEmpty == true)
-        {
-            orderController.currentlyMade[CheckScreenNum(2)][screenIndex] = 3; //change the screen # of object going into oven (2 -> 3)
-            NextOvenSlot();
-        }
+        ovenEmpty = false;
+        orderController.currentlyMade[CheckScreenNum(2)][screenIndex] = 3; //change the screen # of object going into oven (2 -> 3)
+
+        NextOvenSlot();
     }
-
-
 
 
 

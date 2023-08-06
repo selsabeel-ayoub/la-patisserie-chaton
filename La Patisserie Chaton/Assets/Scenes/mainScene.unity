@@ -2353,6 +2353,9 @@ MonoBehaviour:
   - {fileID: 1255281022}
   - {fileID: 491263281}
   bowlsToPanPlayable: {fileID: 1717047941}
+  vanPan: {fileID: 3020589527799686902, guid: 8f998ca7ce794424aa9172ed6551f472, type: 3}
+  chocPan: {fileID: 6792208792234081393, guid: 9349bfb9a2bcc6d469be93da3f9e3a11, type: 3}
+  strawPan: {fileID: 508746467042960768, guid: 345f4621dfdbb564faaf3d3dbe261c5f, type: 3}
 --- !u!4 &948009846
 Transform:
   m_ObjectHideFlags: 0

@@ -24,30 +24,36 @@ public class OrderController : MonoBehaviour
     [SerializeField] Sprite emptyStarSprite;
     [SerializeField] PlayableDirector sellingTimeline;
 
-    //    [SerializeField] BoxCollider2D[] creamColliders;
-
 
     GameObject canvasPanel;
     [SerializeField] Transform[] orderSlots;
     [SerializeField] SpriteRenderer[] starSprites;
 
     //2D Lists
-    List<List<int>> newOrders = new List<List<int>>(); // [cookie type, cream type]
-    public List<List<int>> takenOrders = new List<List<int>>(); // [screen, cookie type, cream type, time taken, time sold]
-    public List<List<int>> currentlyMade = new List<List<int>>(); // [cookie type, cream type]
+    List<List<int>> newOrders = new List<List<int>>(); // [cat, cookie type, cream type]
+    public List<List<int>> takenOrders = new List<List<int>>(); // [cat, cookie type, cream type, time taken, time sold]
+    public List<List<int>> currentlyMade = new List<List<int>>(); // [screen, cookie type, cream type]
 
     List<int> selectedOrder = new List<int>();
 
-    int totalStars = 0;
-    int stars = 0;
-
     [HideInInspector] public int screenIndex = 0;
+    [HideInInspector] public int cookieTypeIndex_made = 1;
+    [HideInInspector] public int creamTypeIndex_made = 2;
+
+    //used for both newOrders[] and takenOrders[]
+    [HideInInspector] public int catTypeIndex = 0;
     [HideInInspector] public int cookieTypeIndex = 1;
     [HideInInspector] public int creamTypeIndex = 2;
     int timeTakenIndex = 3;
     int timeSoldIndex = 4;
 
+
+
+    int totalStars = 0;
+    int stars = 0;
+
     int flavourNum = 3;
+    int catTypeNum = 3;
 
     int newOrderTextWait = 2;
     int newOrderIndex = 0;
@@ -81,10 +87,12 @@ public class OrderController : MonoBehaviour
     [ContextMenu("Add New Order")]
     void NewOrder()
     {
+        int catType = Random.Range(0, catTypeNum); // 0 = calico, 1 = ginger, 2 = grey
         int cookieType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
         int creamType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
 
         newOrders.Add(new List<int>());
+        newOrders[newOrderIndex].Add(catType);
         newOrders[newOrderIndex].Add(cookieType);
         newOrders[newOrderIndex].Add(creamType);
 
@@ -111,16 +119,17 @@ public class OrderController : MonoBehaviour
         {
             canTakeOrder = true;
 
-            int item1 = newOrders[0][0]; //cookie type
-            int item2 = newOrders[0][1]; //cream type
+            int item1 = newOrders[0][catTypeIndex]; //cat type
+            int item2 = newOrders[0][cookieTypeIndex]; //cookie type
+            int item3 = newOrders[0][creamTypeIndex]; //cream type
 
             int listLen = takenOrders.Count;
 
             takenOrders.Add(new List<int>());
 
-            takenOrders[listLen].Add(0); // screen
-            takenOrders[listLen].Add(item1); 
-            takenOrders[listLen].Add(item2);
+            takenOrders[listLen].Add(item1);
+            takenOrders[listLen].Add(item2); 
+            takenOrders[listLen].Add(item3);
             takenOrders[listLen].Add((int)Time.time);
 
             newOrders.RemoveAt(0);
@@ -159,20 +168,14 @@ public class OrderController : MonoBehaviour
             takenOrders[selectedOrderNum].Add((int)Time.time); //adding the current time as the "time sold" for the order
 
 
-            /*for (int x = 0; x < flavourNum; x++) //disable all the cream colliders 
-            {
-                creamColliders[x].enabled = false;
-                //reenable when timelines over
-            }*/
-
             selectedOrder = takenOrders[selectedOrderNum]; //this is to compare currentlyMade to it when scoring
             takenOrders.RemoveAt(selectedOrderNum);
 
-            if (orderSlots[selectedOrderNum + 1].childCount > 0) // if the slot after the sold slot is not empty
+            if (orderSlots[selectedOrderNum + 1].childCount > 0) // if the UI slot after the sold slot is not empty
             {
                 for (int i = selectedOrderNum + 1; i <= slotAmt; i++)
                 {
-                    if (orderSlots[i].childCount > 0) //if slot it being used
+                    if (orderSlots[i].childCount > 0) //if UI slot it being used
                     {
                         orderSlots[i].GetChild(0).position = orderSlots[i - 1].position; //Move position
 
@@ -195,13 +198,13 @@ public class OrderController : MonoBehaviour
 
     void Scoring()
     {
-        if (selectedOrder[cookieTypeIndex] == currentlyMade[0][0]) //Check if cookie type is the same
+        if (selectedOrder[cookieTypeIndex] == currentlyMade[0][cookieTypeIndex_made]) //Check if cookie type is the same
          {
             stars++;
             Debug.Log("correct cookie flavour");
          }
 
-        if (selectedOrder[creamTypeIndex] == currentlyMade[0][1]) //Check if cream type is the same
+        if (selectedOrder[creamTypeIndex] == currentlyMade[0][creamTypeIndex_made]) //Check if cream type is the same
          {
              stars ++;
             Debug.Log("correct cream flavour");

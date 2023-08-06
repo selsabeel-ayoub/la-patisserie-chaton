@@ -22,6 +22,8 @@ public class FlavourBowls : MonoBehaviour
         currentIndex = orderController.currentlyMade.Count;
 
         orderController.currentlyMade.Add(new List<int>());
+
+        orderController.currentlyMade[currentIndex].Add(0); // screen
         orderController.currentlyMade[currentIndex].Add(flavourType);
 
         Debug.Log("cookie flavour chosen:" + orderController.currentlyMade[currentIndex][0]);

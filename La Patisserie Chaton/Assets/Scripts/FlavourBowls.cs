@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlavourBowls : MonoBehaviour
 {
     OrderController orderController;
+    ObjectController objectController;
 
     [SerializeField] int flavourType;
     int currentIndex = 0;
@@ -13,6 +14,7 @@ public class FlavourBowls : MonoBehaviour
     private void Start()
     {
         orderController = GameObject.FindWithTag("orderController").GetComponent<OrderController>();
+        objectController = GameObject.FindWithTag("objectController").GetComponent<ObjectController>();
     }
 
     private void OnMouseDown()
@@ -24,6 +26,6 @@ public class FlavourBowls : MonoBehaviour
 
         Debug.Log("cookie flavour chosen:" + orderController.currentlyMade[currentIndex][0]);
 
-        //disable the triggercolliders of all of them once one is chosen, remmeber to re-enable when this one is over on next screen
+        objectController.BowlsToPan();
     }
 }

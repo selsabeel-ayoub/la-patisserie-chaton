@@ -41,13 +41,11 @@ public class OrderController : MonoBehaviour
     int totalStars = 0;
     int stars = 0;
 
-
     [HideInInspector] public int screenIndex = 0;
     [HideInInspector] public int cookieTypeIndex = 1;
     [HideInInspector] public int creamTypeIndex = 2;
     int timeTakenIndex = 3;
     int timeSoldIndex = 4;
-
 
     int flavourNum = 3;
 

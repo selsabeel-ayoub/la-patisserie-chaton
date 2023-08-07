@@ -98,6 +98,34 @@ public class ObjectController : MonoBehaviour
         }
     }
 
+    public void NextCreamSlot()
+    {
+        if (CheckScreenNum(5) == -1) //only if there isnt anything in the slot right now
+        {
+            int firstInCreamBacklog = CheckScreenNum(4);
+
+
+            if (firstInCreamBacklog != -1) //if there is a backlog, move the first in backlog to the oven slot
+            {
+                //Check cookie flavour of the order next up for the oven slot
+                if (orderController.currentlyMade[firstInCreamBacklog][macTypeIndex] == 0)
+                {
+                    Debug.Log("vanilla mac in cream slot");
+                }
+                else if (orderController.currentlyMade[firstInCreamBacklog][macTypeIndex] == 1)
+                {
+                    Debug.Log("choc mac in cream slot");
+                }
+                else
+                {
+                    Debug.Log("strawb mac in cream slot");
+                }
+
+                orderController.currentlyMade[firstInCreamBacklog][screenIndex] = 5; //change the object going into oven slot's screen # (4 -> 5)
+            }
+        }
+    }
+
     public void MoveInOven()
     {
         ovenEmpty = false;
@@ -113,6 +141,7 @@ public class ObjectController : MonoBehaviour
 
         panToCreamRoomPlayable.Play();
         StartCoroutine(ResetInOvenObj());
+        NextCreamSlot();
     }
 
     IEnumerator ResetInOvenObj ()

@@ -7,7 +7,7 @@ using UnityEngine.Playables;
 
 public class OrderController : MonoBehaviour
 {
-    OrderSelection orderSelection;
+    [SerializeField] ObjectController objectController;
 
     [SerializeField] int newOrderInterval = 30;
 
@@ -66,7 +66,6 @@ public class OrderController : MonoBehaviour
 
     private void Start()
     {
-        orderSelection = GetComponent<OrderSelection>();
         canvasPanel = GameObject.FindWithTag("orderPanel");
     }
 
@@ -163,7 +162,7 @@ public class OrderController : MonoBehaviour
 
         selectedOrderNum = OrderSelection.selectedOrderNum;
 
-        if (selectedOrderNum >= 0)
+        if (selectedOrderNum >= 0) // && currentlyMade[0].count is 3 && animation is done playing (varibale from other script)
         {
             takenOrders[selectedOrderNum].Add((int)Time.time); //adding the current time as the "time sold" for the order
 
@@ -191,6 +190,7 @@ public class OrderController : MonoBehaviour
             Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
 
             Scoring();
+            objectController.NextCreamSlot();
 
             sellingTimeline.Play();
         }

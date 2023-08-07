@@ -3027,6 +3027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90a571ec19979f24d910ec5d4c2d9815, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectController: {fileID: 948009845}
   newOrderInterval: 30
   scoreMinTime: 30
   scoreMaxTime: 60

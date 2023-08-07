@@ -8,8 +8,14 @@ public class ObjectController : MonoBehaviour
     public bool ovenEmpty = true;
 
     [SerializeField] OrderController orderController;
+
     [SerializeField] BoxCollider2D[] flavBowlColliders;
+    [SerializeField] BoxCollider2D panCollider;
+    [SerializeField] Transform inOvenObj;
+
     [SerializeField] PlayableDirector bowlsToPanPlayable;
+    [SerializeField] PlayableDirector panToOvenRoomPlayable;
+    [SerializeField] PlayableDirector panToCreamRoomPlayable;
 
     //change later to just one gameobject with sprite changing (Gameobject ovenPan)
     [SerializeField] GameObject vanPan;
@@ -23,7 +29,10 @@ public class ObjectController : MonoBehaviour
     int macFlavorNum = 3;
     //int cremFlavorNum = 3;
 
-    int firstInOvenBacklog; // better name?
+    int firstInOvenBacklog;
+    Vector3 inOvenObjStartPos;
+
+    float panToCreamRoomPlayableLen = 2f;
 
 
     private void Start()
@@ -31,6 +40,8 @@ public class ObjectController : MonoBehaviour
         screenIndex = orderController.screenIndex;
         macTypeIndex = orderController.cookieTypeIndex_made;
         //cremTypeIndex = orderController.creamTypeIndex_made;
+
+        inOvenObjStartPos = inOvenObj.position;
     }
 
     public void BowlsToPan ()
@@ -40,12 +51,20 @@ public class ObjectController : MonoBehaviour
             flavBowlColliders[x].enabled = false;
         }
 
+        panCollider.enabled = true;
         bowlsToPanPlayable.Play();
     }
 
-    [ContextMenu ("Pan to Oven Screen")]
-    void PanToOvenScreen ()
+    public void PanToOvenScreen ()
     {
+        panCollider.enabled = false;
+        panToOvenRoomPlayable.Play();
+
+        for (int x = 0; x < macFlavorNum; x++)
+        {
+            flavBowlColliders[x].enabled = true;
+        }
+
         orderController.currentlyMade[CheckScreenNum(0)][screenIndex] = 1; //change screen num (0 -> 1)
         NextOvenSlot();
     }
@@ -87,9 +106,23 @@ public class ObjectController : MonoBehaviour
         NextOvenSlot();
     }
 
+    public void panToCreamRoom ()
+    {
+        ovenEmpty = true;
+        orderController.currentlyMade[CheckScreenNum(3)][screenIndex] = 4; //change the screen # of object going into cream room (3 -> 4)
+
+        panToCreamRoomPlayable.Play();
+        StartCoroutine(ResetInOvenObj());
+    }
+
+    IEnumerator ResetInOvenObj ()
+    {
+        yield return new WaitForSeconds(panToCreamRoomPlayableLen);
+        Destroy(inOvenObj.GetChild(0).gameObject);
+    }
 
 
-    int CheckScreenNum (int screenNum) //returns the index of the first order on a specific screen
+    public int CheckScreenNum (int screenNum) //returns the index of the first order on a specific screen
     {
         int madeListLen = orderController.currentlyMade.Count;
 
@@ -103,4 +136,12 @@ public class ObjectController : MonoBehaviour
 
         return -1; // if there is no order on this screen
     }
+
+    /*Screens: 0 - mixing room
+               1 - waiting for oven slot
+               2 - in oven slot
+               3 - in oven
+               4 - waiting for cream slot
+               5 - in cream slot
+    */
 }

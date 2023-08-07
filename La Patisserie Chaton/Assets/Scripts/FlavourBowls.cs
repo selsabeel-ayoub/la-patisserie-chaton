@@ -28,6 +28,6 @@ public class FlavourBowls : MonoBehaviour
 
         Debug.Log("cookie flavour chosen:" + orderController.currentlyMade[currentIndex][1]);
 
-        //objectController.BowlsToPan();
+        objectController.BowlsToPan();
     }
 }

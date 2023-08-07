@@ -8,6 +8,9 @@ public class PanIntoOven : MonoBehaviour
     DragAndDrop dragAndDrop;
     OvenDoor ovenDoor;
 
+    Transform inOvenObj;
+    BoxCollider2D panCollider;
+
     bool isPanInOven;
 
     private void Awake()
@@ -15,6 +18,9 @@ public class PanIntoOven : MonoBehaviour
         objectController = GameObject.FindWithTag("objectController").GetComponent<ObjectController>();
         ovenDoor = GameObject.FindWithTag("ovenDoor").GetComponent<OvenDoor>();
         dragAndDrop = GetComponent<DragAndDrop>();
+
+        inOvenObj = GameObject.FindWithTag("insideOven").GetComponent<Transform>();
+        panCollider = GetComponent<BoxCollider2D>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,7 +43,9 @@ public class PanIntoOven : MonoBehaviour
         if (isPanInOven && objectController.ovenEmpty && ovenDoor.isOpen)
         {
             dragAndDrop.enabled = false;
-            transform.position = new Vector2(41, -2);
+            panCollider.enabled = false;
+            transform.position = inOvenObj.position;
+            transform.SetParent(inOvenObj);
 
             objectController.MoveInOven();
         }

@@ -25,6 +25,7 @@ public class ObjectController : MonoBehaviour
     [SerializeField] GameObject vanPan_crem;
     [SerializeField] GameObject chocPan_crem;
     [SerializeField] GameObject strawPan_crem;
+    [SerializeField] GameObject burntPan_crem;
 
     int ovenBacklogScreen = 1;
     int ovenSlotScreen = 2;
@@ -40,7 +41,6 @@ public class ObjectController : MonoBehaviour
 
     int screenIndex;
     int macTypeIndex;
-    //int cremTypeIndex;
 
     int macFlavorNum = 3;
     int cremFlavorNum = 3;
@@ -55,7 +55,6 @@ public class ObjectController : MonoBehaviour
     {
         screenIndex = orderController.screenIndex;
         macTypeIndex = orderController.cookieTypeIndex_made;
-        //cremTypeIndex = orderController.creamTypeIndex_made;
 
         inOvenObjStartPos = inOvenObj.position;
     }
@@ -132,16 +131,16 @@ public class ObjectController : MonoBehaviour
 
     void NextInOvenSlot()
     {
-        NextInSlot(ovenSlotScreen, ovenBacklogScreen, vanPan_oven, chocPan_oven, strawPan_oven);
+        NextInSlot(ovenSlotScreen, ovenBacklogScreen, vanPan_oven, chocPan_oven, strawPan_oven, null);
     }
 
     public void NextCreamSlot()
     {
-        NextInSlot(cremSlotScreen, cremBacklogScreen, vanPan_crem, chocPan_crem, strawPan_crem);
+        NextInSlot(cremSlotScreen, cremBacklogScreen, vanPan_crem, chocPan_crem, strawPan_crem, burntPan_crem);
     }
 
 
-    void NextInSlot(int slotScreenNum, int backlogScreenNum, GameObject vanPan, GameObject chocPan, GameObject strawPan)
+    void NextInSlot(int slotScreenNum, int backlogScreenNum, GameObject vanPan, GameObject chocPan, GameObject strawPan, GameObject burntPan)
     {
         if (CheckScreenNum(slotScreenNum) == -1) //only if there isnt anything in the oven slot right now
         {
@@ -158,9 +157,13 @@ public class ObjectController : MonoBehaviour
                 {
                     Instantiate(chocPan);
                 }
-                else
+                else if (orderController.currentlyMade[firstInBacklog][macTypeIndex] == 2)
                 {
                     Instantiate(strawPan);
+                }
+                else
+                {
+                    Instantiate(burntPan);
                 }
 
                 orderController.currentlyMade[firstInBacklog][screenIndex] = slotScreenNum; //change the screen # of object going into slot

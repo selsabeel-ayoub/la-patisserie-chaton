@@ -232,7 +232,6 @@ public class OrderController : MonoBehaviour
         for (int i = 0; i < stars; i++)
         {
             starSprites[i].sprite = filledStarSprite;
-            //remember to reset all sprites to unfilled after
         }
 
         totalStars += stars;

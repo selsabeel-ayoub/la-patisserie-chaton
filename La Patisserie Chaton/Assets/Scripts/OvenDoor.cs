@@ -11,12 +11,15 @@ public class OvenDoor : MonoBehaviour
 
     [SerializeField] GameObject ovenTimer;
     [SerializeField] Animator ovenAnimator;
+    [SerializeField] Transform inOvenObj;
+    [SerializeField] Sprite burntOvenPan;
 
     int secUntilGreen = 6;
     int secUntilRed = 3;
 
     Coroutine lastRoutine;
     GameObject ovenTimerObj;
+    SpriteRenderer ovenPanSprite;
 
     int cookieTypeIndex;
     int orderInOvenIndex;
@@ -74,7 +77,8 @@ public class OvenDoor : MonoBehaviour
         Debug.Log("red");
         orderInOvenIndex = objectController.CheckScreenNum(3);
         orderController.currentlyMade[orderInOvenIndex][cookieTypeIndex] = -1;
-        //must also change sprite
+        ovenPanSprite = inOvenObj.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+        ovenPanSprite.sprite = burntOvenPan;
     }
 
 }

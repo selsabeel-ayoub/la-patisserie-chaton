@@ -429,7 +429,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 1133368748, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1528,7 +1528,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: 2025310112, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2551,9 +2551,12 @@ MonoBehaviour:
   bowlsToPanPlayable: {fileID: 1717047941}
   panToOvenRoomPlayable: {fileID: 890939540}
   panToCreamRoomPlayable: {fileID: 1349756607}
-  vanPan: {fileID: 3020589527799686902, guid: 8f998ca7ce794424aa9172ed6551f472, type: 3}
-  chocPan: {fileID: 6792208792234081393, guid: 9349bfb9a2bcc6d469be93da3f9e3a11, type: 3}
-  strawPan: {fileID: 508746467042960768, guid: 345f4621dfdbb564faaf3d3dbe261c5f, type: 3}
+  vanPan_oven: {fileID: 3020589527799686902, guid: 8f998ca7ce794424aa9172ed6551f472, type: 3}
+  chocPan_oven: {fileID: 6792208792234081393, guid: 9349bfb9a2bcc6d469be93da3f9e3a11, type: 3}
+  strawPan_oven: {fileID: 508746467042960768, guid: 345f4621dfdbb564faaf3d3dbe261c5f, type: 3}
+  vanPan_crem: {fileID: 6596025034975806220, guid: c5f9e3816e0aec34ebdcb4d086794328, type: 3}
+  chocPan_crem: {fileID: 2967768596534626166, guid: df35e29d4b88f6f4bba1edd1bf3ffa64, type: 3}
+  strawPan_crem: {fileID: 3184163594561251467, guid: 0b1ea9427d572364bb2e0dc343502486, type: 3}
 --- !u!4 &948009846
 Transform:
   m_ObjectHideFlags: 0
@@ -3718,7 +3721,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 6
   m_Sprite: {fileID: -1815846785, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

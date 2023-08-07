@@ -18,9 +18,24 @@ public class ObjectController : MonoBehaviour
     [SerializeField] PlayableDirector panToCreamRoomPlayable;
 
     //change later to just one gameobject with sprite changing (Gameobject ovenPan)
-    [SerializeField] GameObject vanPan;
-    [SerializeField] GameObject chocPan;
-    [SerializeField] GameObject strawPan;
+    [SerializeField] GameObject vanPan_oven;
+    [SerializeField] GameObject chocPan_oven;
+    [SerializeField] GameObject strawPan_oven;
+    [SerializeField] GameObject vanPan_crem;
+    [SerializeField] GameObject chocPan_crem;
+    [SerializeField] GameObject strawPan_crem;
+
+    int ovenBacklogScreen = 1;
+    int ovenSlotScreen = 2;
+    int cremBacklogScreen = 4;
+    int cremSlotScreen = 5;
+
+    /*Screens: 0 - mixing room
+               1 - waiting for oven slot
+               2 - in oven slot
+               3 - in oven
+               4 - waiting for cream slot
+               5 - in cream slot */
 
     int screenIndex;
     int macTypeIndex;
@@ -66,78 +81,22 @@ public class ObjectController : MonoBehaviour
         }
 
         orderController.currentlyMade[CheckScreenNum(0)][screenIndex] = 1; //change screen num (0 -> 1)
-        NextOvenSlot();
+        NextInOvenSlot();
     }
 
-
-    void NextOvenSlot ()
-    {
-        if (CheckScreenNum(2) == -1) //only if there isnt anything in the oven slot right now
-        {
-            firstInOvenBacklog = CheckScreenNum(1); //check which index is in oven backlog (screen 1). and set to firstInOvenBacklog
-
-
-            if (firstInOvenBacklog != -1) //if there is a backlog, move the first in backlog to the oven slot
-            {
-                //Check cookie flavour of the order next up for the oven slot
-                if (orderController.currentlyMade[firstInOvenBacklog][macTypeIndex] == 0)
-                {
-                    Instantiate(vanPan);
-                }
-                else if (orderController.currentlyMade[firstInOvenBacklog][macTypeIndex] == 1)
-                {
-                    Instantiate(chocPan);
-                }
-                else
-                {
-                    Instantiate(strawPan);
-                }
-
-                orderController.currentlyMade[firstInOvenBacklog][screenIndex] = 2; //change the object going into oven slot's screen # (1 -> 2)
-            }
-        }
-    }
-
-    public void NextCreamSlot()
-    {
-        if (CheckScreenNum(5) == -1) //only if there isnt anything in the slot right now
-        {
-            int firstInCreamBacklog = CheckScreenNum(4);
-
-
-            if (firstInCreamBacklog != -1) //if there is a backlog, move the first in backlog to the oven slot
-            {
-                //Check cookie flavour of the order next up for the oven slot
-                if (orderController.currentlyMade[firstInCreamBacklog][macTypeIndex] == 0)
-                {
-                    Debug.Log("vanilla mac in cream slot");
-                }
-                else if (orderController.currentlyMade[firstInCreamBacklog][macTypeIndex] == 1)
-                {
-                    Debug.Log("choc mac in cream slot");
-                }
-                else
-                {
-                    Debug.Log("strawb mac in cream slot");
-                }
-
-                orderController.currentlyMade[firstInCreamBacklog][screenIndex] = 5; //change the object going into oven slot's screen # (4 -> 5)
-            }
-        }
-    }
 
     public void MoveInOven()
     {
         ovenEmpty = false;
         orderController.currentlyMade[CheckScreenNum(2)][screenIndex] = 3; //change the screen # of object going into oven (2 -> 3)
 
-        NextOvenSlot();
+        NextInOvenSlot();
     }
 
     public void panToCreamRoom ()
     {
         ovenEmpty = true;
-        orderController.currentlyMade[CheckScreenNum(3)][screenIndex] = 4; //change the screen # of object going into cream room (3 -> 4)
+        orderController.currentlyMade[CheckScreenNum(3)][screenIndex] = 4; //change the screen # of object going into cream room backlog (3 -> 4)
 
         panToCreamRoomPlayable.Play();
         StartCoroutine(ResetInOvenObj());
@@ -150,6 +109,44 @@ public class ObjectController : MonoBehaviour
         Destroy(inOvenObj.GetChild(0).gameObject);
     }
 
+
+    void NextInOvenSlot()
+    {
+        NextInSlot(ovenSlotScreen, ovenBacklogScreen, vanPan_oven, chocPan_oven, strawPan_oven);
+    }
+
+    public void NextCreamSlot()
+    {
+        NextInSlot(cremSlotScreen, cremBacklogScreen, vanPan_crem, chocPan_crem, strawPan_crem);
+    }
+
+
+    void NextInSlot(int slotScreenNum, int backlogScreenNum, GameObject vanPan, GameObject chocPan, GameObject strawPan)
+    {
+        if (CheckScreenNum(slotScreenNum) == -1) //only if there isnt anything in the oven slot right now
+        {
+            int firstInBacklog = CheckScreenNum(backlogScreenNum); //check which index of list is first in backlog and set to firstInBacklog
+
+            if (firstInBacklog != -1) //if there is a backlog, move the first in backlog to the slot
+            {
+                //Check cookie flavour of the order next up for the oven slot
+                if (orderController.currentlyMade[firstInBacklog][macTypeIndex] == 0)
+                {
+                    Instantiate(vanPan);
+                }
+                else if (orderController.currentlyMade[firstInBacklog][macTypeIndex] == 1)
+                {
+                    Instantiate(chocPan);
+                }
+                else
+                {
+                    Instantiate(strawPan);
+                }
+
+                orderController.currentlyMade[firstInBacklog][screenIndex] = slotScreenNum; //change the screen # of object going into slot
+            }
+        }
+    }
 
     public int CheckScreenNum (int screenNum) //returns the index of the first order on a specific screen
     {
@@ -165,12 +162,4 @@ public class ObjectController : MonoBehaviour
 
         return -1; // if there is no order on this screen
     }
-
-    /*Screens: 0 - mixing room
-               1 - waiting for oven slot
-               2 - in oven slot
-               3 - in oven
-               4 - waiting for cream slot
-               5 - in cream slot
-    */
 }

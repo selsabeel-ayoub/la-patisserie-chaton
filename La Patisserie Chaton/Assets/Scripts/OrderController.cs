@@ -26,6 +26,7 @@ public class OrderController : MonoBehaviour
 
 
     GameObject canvasPanel;
+    GameObject cremPan;
     [SerializeField] Transform[] orderSlots;
     [SerializeField] SpriteRenderer[] starSprites;
 
@@ -193,6 +194,9 @@ public class OrderController : MonoBehaviour
             objectController.NextCreamSlot();
 
             sellingTimeline.Play();
+
+            cremPan = GameObject.FindWithTag("cremPan");
+            Destroy(cremPan);
         }
     }
 

@@ -9,6 +9,7 @@ TagManager:
   - objectController
   - ovenDoor
   - insideOven
+  - cremPan
   layers:
   - Default
   - TransparentFX

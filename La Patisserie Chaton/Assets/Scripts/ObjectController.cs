@@ -10,6 +10,7 @@ public class ObjectController : MonoBehaviour
     [SerializeField] OrderController orderController;
 
     [SerializeField] BoxCollider2D[] flavBowlColliders;
+    [SerializeField] BoxCollider2D[] cremColliders;
     [SerializeField] BoxCollider2D panCollider;
     [SerializeField] Transform inOvenObj;
 
@@ -42,7 +43,7 @@ public class ObjectController : MonoBehaviour
     //int cremTypeIndex;
 
     int macFlavorNum = 3;
-    //int cremFlavorNum = 3;
+    int cremFlavorNum = 3;
 
     int firstInOvenBacklog;
     Vector3 inOvenObjStartPos;
@@ -109,6 +110,25 @@ public class ObjectController : MonoBehaviour
         Destroy(inOvenObj.GetChild(0).gameObject);
     }
 
+    public void AddCream()
+    {
+        for (int x = 0; x < cremFlavorNum; x++)
+        {
+           cremColliders[x].enabled = false;
+        }
+
+        //add cream sprites using 
+        //play closing anim
+        //set bool to true to allow to sell now that anim is done
+    }
+
+    public void ResetCream ()
+    {
+        for (int x = 0; x < cremFlavorNum; x++)
+        {
+            cremColliders[x].enabled = true;
+        }
+    }
 
     void NextInOvenSlot()
     {

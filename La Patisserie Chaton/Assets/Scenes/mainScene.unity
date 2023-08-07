@@ -306,9 +306,10 @@ GameObject:
   m_Component:
   - component: {fileID: 169731263}
   - component: {fileID: 169731266}
+  - component: {fileID: 169731269}
   - component: {fileID: 169731265}
-  - component: {fileID: 169731264}
   - component: {fileID: 169731267}
+  - component: {fileID: 169731268}
   m_Layer: 0
   m_Name: Vanilla Piping Bag
   m_TagString: Untagged
@@ -331,19 +332,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1566617048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &169731264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169731262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9181a9bae41f69544ae9b6b8227f5b70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flavourType: 0
 --- !u!61 &169731265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -376,7 +364,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.38906294, y: -0.44265556}
+  m_Offset: {x: -0.48, y: -0.82}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -387,7 +375,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5025811, y: 3.2890387}
+  m_Size: {x: 2.53, y: 3.78}
   m_EdgeRadius: 0
 --- !u!212 &169731266
 SpriteRenderer:
@@ -453,6 +441,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &169731268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169731262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7626ca685b0bad74cabf4c0df0503633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderController: {fileID: 1238323848}
+  objectController: {fileID: 948009845}
+  flavourType: 0
+--- !u!50 &169731269
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169731262}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &281307125
 GameObject:
   m_ObjectHideFlags: 0
@@ -1169,7 +1199,7 @@ Transform:
   m_GameObject: {fileID: 556561443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 41, y: -2, z: 0}
+  m_LocalPosition: {x: 41, y: -2.1, z: 0}
   m_LocalScale: {x: 10, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1405,9 +1435,10 @@ GameObject:
   m_Component:
   - component: {fileID: 677922252}
   - component: {fileID: 677922255}
+  - component: {fileID: 677922258}
   - component: {fileID: 677922254}
-  - component: {fileID: 677922253}
   - component: {fileID: 677922256}
+  - component: {fileID: 677922257}
   m_Layer: 0
   m_Name: Choc Piping Bag
   m_TagString: Untagged
@@ -1430,19 +1461,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1566617048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &677922253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 677922251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9181a9bae41f69544ae9b6b8227f5b70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flavourType: 1
 --- !u!61 &677922254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1475,7 +1493,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.38013154, y: -0.54751945}
+  m_Offset: {x: -0.48, y: -0.82}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1486,7 +1504,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5943375, y: 3.422483}
+  m_Size: {x: 2.53, y: 3.78}
   m_EdgeRadius: 0
 --- !u!212 &677922255
 SpriteRenderer:
@@ -1552,6 +1570,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &677922257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677922251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7626ca685b0bad74cabf4c0df0503633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderController: {fileID: 1238323848}
+  objectController: {fileID: 948009845}
+  flavourType: 1
+--- !u!50 &677922258
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 677922251}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &683016660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2546,6 +2606,10 @@ MonoBehaviour:
   - {fileID: 981575995}
   - {fileID: 1255281022}
   - {fileID: 491263281}
+  cremColliders:
+  - {fileID: 169731265}
+  - {fileID: 677922254}
+  - {fileID: 1437260377}
   panCollider: {fileID: 1919497646}
   inOvenObj: {fileID: 556561444}
   bowlsToPanPlayable: {fileID: 1717047941}
@@ -3598,9 +3662,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1437260375}
   - component: {fileID: 1437260378}
+  - component: {fileID: 1437260381}
   - component: {fileID: 1437260377}
-  - component: {fileID: 1437260376}
   - component: {fileID: 1437260379}
+  - component: {fileID: 1437260380}
   m_Layer: 0
   m_Name: Strawb Piping Bag
   m_TagString: Untagged
@@ -3623,19 +3688,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1566617048}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1437260376
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437260374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9181a9bae41f69544ae9b6b8227f5b70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  flavourType: 2
 --- !u!61 &1437260377
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3668,7 +3720,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.35867402, y: -0.5439395}
+  m_Offset: {x: -0.48, y: -0.82}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3679,7 +3731,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.6372147, y: 3.258054}
+  m_Size: {x: 2.53, y: 3.78}
   m_EdgeRadius: 0
 --- !u!212 &1437260378
 SpriteRenderer:
@@ -3745,6 +3797,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1437260380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437260374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7626ca685b0bad74cabf4c0df0503633, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orderController: {fileID: 1238323848}
+  objectController: {fileID: 948009845}
+  flavourType: 2
+--- !u!50 &1437260381
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1437260374}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1463313593
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,7 +4698,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4870d56a363c4f74daa6f40cf70bce82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4625,7 +4719,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 22.44, y: -8.5, z: 0}
-  m_LocalScale: {x: 5, y: 6, z: 1}
+  m_LocalScale: {x: 1, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 869396233}
@@ -4675,18 +4769,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.02508545, y: 0.101985455}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 6.05, y: 7.01}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.8848114, y: 6.4052067}
   m_EdgeRadius: 0
 --- !u!4 &1938612231 stripped
 Transform:

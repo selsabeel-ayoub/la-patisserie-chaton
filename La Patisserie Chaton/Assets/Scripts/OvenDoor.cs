@@ -9,12 +9,14 @@ public class OvenDoor : MonoBehaviour
     [SerializeField] ObjectController objectController;
     [SerializeField] OrderController orderController;
 
+    [SerializeField] GameObject ovenTimer;
     [SerializeField] Animator ovenAnimator;
 
-    [SerializeField] int secUntilGreen = 5;
-    [SerializeField] int secUntilRed = 8;
+    int secUntilGreen = 6;
+    int secUntilRed = 3;
 
     Coroutine lastRoutine;
+    GameObject ovenTimerObj;
 
     int cookieTypeIndex;
     int orderInOvenIndex;
@@ -52,6 +54,7 @@ public class OvenDoor : MonoBehaviour
                 isOpen = true;
 
                 StopCoroutine(lastRoutine);
+                Destroy(ovenTimerObj);
 
                 objectController.panToCreamRoom();
             }
@@ -60,7 +63,8 @@ public class OvenDoor : MonoBehaviour
 
     IEnumerator OvenCoroutine()
     {
-        //instantiate oven timer prefab
+        yield return new WaitForSeconds(1);
+        ovenTimerObj = Instantiate(ovenTimer);
 
         yield return new WaitForSeconds(secUntilGreen);
         Debug.Log("green");

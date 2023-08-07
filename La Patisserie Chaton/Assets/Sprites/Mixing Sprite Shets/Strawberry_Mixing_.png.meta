@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Strawberry_Mixing_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1537
+        width: 444
+        height: 592
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee1afa386f11194ab57aa80a4493c52
+      internalID: 1545099875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_1
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 1487
+        width: 444
+        height: 604
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a92971fb3440bbd43a80d231174227f4
+      internalID: 1948537623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_2
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 1502
+        width: 444
+        height: 602
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee878f16c33a05047a36462ee9b1206c
+      internalID: 1998509535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_3
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1507
+        width: 444
+        height: 589
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 500b19b7ed182e449a4191fa3a6f7360
+      internalID: -1839864623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_4
+      rect:
+        serializedVersion: 2
+        x: 3379
+        y: 1507
+        width: 445
+        height: 564
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219e9e6a70f17fa43832aef133746fc0
+      internalID: 227330993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_5
+      rect:
+        serializedVersion: 2
+        x: 4229
+        y: 1515
+        width: 442
+        height: 496
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568ed0ffb1009bf40946d40a4aabd2aa
+      internalID: -1526737698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_9
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 815
+        width: 442
+        height: 572
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5666ddaf1d8403b4bae8b4e0be2a971d
+      internalID: 1976859700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_10
+      rect:
+        serializedVersion: 2
+        x: 3322
+        y: 798
+        width: 442
+        height: 592
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06742ec3762b6894c8787343ba8f2313
+      internalID: -890351936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_11
+      rect:
+        serializedVersion: 2
+        x: 4196
+        y: 817
+        width: 444
+        height: 582
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cf20e33a08e6243b7e2bf1dbb134df
+      internalID: -1549594841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 863
+        width: 442
+        height: 489
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94e590e48eb8b34989f7db7c3060df2
+      internalID: -1429352335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_7
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 850
+        width: 444
+        height: 493
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e52de21d7ad724478df0759abb7296c
+      internalID: -594351083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_8
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 813
+        width: 442
+        height: 519
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2be6e1e30170e5a46821a2db9951a9a3
+      internalID: -608052643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_12
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 116
+        width: 442
+        height: 577
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c35c773935933c459a52c2bfa8f4db6
+      internalID: 1444535647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_13
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 119
+        width: 466
+        height: 544
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e4ee92eee1ec6409c979f27edd2892
+      internalID: -2123352821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_14
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 151
+        width: 442
+        height: 514
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e53ba4b0c41232b46a39ab5a8a817ac0
+      internalID: 506687228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_15
+      rect:
+        serializedVersion: 2
+        x: 2875
+        y: 136
+        width: 444
+        height: 504
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 967bd7b52689dee40a12ab5798f7526b
+      internalID: 1437340006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_16
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 156
+        width: 442
+        height: 494
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b4e7877bc04fa44a102373d5af9ccf
+      internalID: 1413029320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Mixing_17
+      rect:
+        serializedVersion: 2
+        x: 4474
+        y: 164
+        width: 442
+        height: 519
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590ea74bf29e9ee47860eca842a23f58
+      internalID: 1825915785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +510,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Strawberry_Mixing_0: 1545099875
+      Strawberry_Mixing_1: 1948537623
+      Strawberry_Mixing_10: -890351936
+      Strawberry_Mixing_11: -1549594841
+      Strawberry_Mixing_12: 1444535647
+      Strawberry_Mixing_13: -2123352821
+      Strawberry_Mixing_14: 506687228
+      Strawberry_Mixing_15: 1437340006
+      Strawberry_Mixing_16: 1413029320
+      Strawberry_Mixing_17: 1825915785
+      Strawberry_Mixing_2: 1998509535
+      Strawberry_Mixing_3: -1839864623
+      Strawberry_Mixing_4: 227330993
+      Strawberry_Mixing_5: -1526737698
+      Strawberry_Mixing_6: -1429352335
+      Strawberry_Mixing_7: -594351083
+      Strawberry_Mixing_8: -608052643
+      Strawberry_Mixing_9: 1976859700
+      Strawberry_Mixing__12: -621674554
+      Strawberry_Mixing__6: 1196527705
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

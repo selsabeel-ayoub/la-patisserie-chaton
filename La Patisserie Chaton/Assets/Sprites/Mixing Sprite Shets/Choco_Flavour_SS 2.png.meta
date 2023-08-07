@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_1
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 1920
+        width: 868
+        height: 670
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5448a51b15b6a4342bda879f37e3cf83
+      internalID: -1993614775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_2
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 1916
+        width: 695
+        height: 625
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5ac0ef876835e44ba636cf10514f04
+      internalID: 2079419305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_3
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1915
+        width: 626
+        height: 626
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efdc6ddce24ad9439f23d2a8fac47e2
+      internalID: 777850208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_4
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 1939
+        width: 600
+        height: 642
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d3d2481c80884e4592328f12782ae04
+      internalID: 1237455066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_5
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 1032
+        width: 584
+        height: 624
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f9ba4167b746d4ba4c9c5c7bbbbe8c
+      internalID: 724508453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_6
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1048
+        width: 585
+        height: 601
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfd20dc91908fc428f2e6f8446ecd80
+      internalID: -1937764965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_7
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 1028
+        width: 619
+        height: 648
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 292c432a5e0587146ac542130da8588f
+      internalID: -481536143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_8
+      rect:
+        serializedVersion: 2
+        x: 2854
+        y: 1013
+        width: 665
+        height: 658
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5114632282f02d4fad189b4b2f55c45
+      internalID: -796782376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 137
+        width: 730
+        height: 655
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e70b576dd30d0488de347277b679de
+      internalID: 912190135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_11
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 128
+        width: 852
+        height: 658
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63288bbea60e8714db6e363e3f5b8309
+      internalID: -306752682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Flavour_SS 2_13
+      rect:
+        serializedVersion: 2
+        x: 1820
+        y: 124
+        width: 896
+        height: 653
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f044b0bc158d748822e02a414dcd09
+      internalID: -1457434498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +363,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Choco_Flavour_SS 2_0: 1530974803
+      Choco_Flavour_SS 2_1: -1993614775
+      Choco_Flavour_SS 2_10: -242776558
+      Choco_Flavour_SS 2_11: -306752682
+      Choco_Flavour_SS 2_12: 613176159
+      Choco_Flavour_SS 2_13: -1457434498
+      Choco_Flavour_SS 2_2: 2079419305
+      Choco_Flavour_SS 2_3: 777850208
+      Choco_Flavour_SS 2_4: 1237455066
+      Choco_Flavour_SS 2_5: 724508453
+      Choco_Flavour_SS 2_6: -1937764965
+      Choco_Flavour_SS 2_7: -481536143
+      Choco_Flavour_SS 2_8: -796782376
+      Choco_Flavour_SS 2_9: 912190135
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

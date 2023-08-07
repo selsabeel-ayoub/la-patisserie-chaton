@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,385 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Choco_Mixing_0
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 1537
+        width: 444
+        height: 592
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65c79cd8363a644fb596380847fdcff
+      internalID: 699759789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_1
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 1487
+        width: 444
+        height: 604
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e9657fc7ae3f9c4885dba555758993f
+      internalID: -335165863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_2
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 1502
+        width: 444
+        height: 602
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d560c0ebbbe327e49ab66b124a33994c
+      internalID: 1117971231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_3
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 1507
+        width: 444
+        height: 589
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffed6c7481fbe33488f290adb03adbb0
+      internalID: 1031003685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_4
+      rect:
+        serializedVersion: 2
+        x: 3379
+        y: 1507
+        width: 445
+        height: 564
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f12137359fd2f1418eec375cff76646
+      internalID: -368899345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_5
+      rect:
+        serializedVersion: 2
+        x: 4229
+        y: 1515
+        width: 442
+        height: 496
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6e10a28c0fb7484ebef6e380d0d51f1
+      internalID: 1174444250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_9
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 815
+        width: 442
+        height: 572
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71357dcae523c86439348f617ff0f3fe
+      internalID: 143745083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_10
+      rect:
+        serializedVersion: 2
+        x: 3326
+        y: 798
+        width: 442
+        height: 592
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bea33c245ea5034486ec032a2741f97
+      internalID: 976722810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_11
+      rect:
+        serializedVersion: 2
+        x: 4196
+        y: 817
+        width: 444
+        height: 582
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 050f7b6859f957c49a3c81ade6971a1f
+      internalID: -451614958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 863
+        width: 442
+        height: 489
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41991df2a4363a146afaa9ce8cbea7ec
+      internalID: -1356624541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_7
+      rect:
+        serializedVersion: 2
+        x: 976
+        y: 850
+        width: 444
+        height: 493
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f482434478f8ce14c894966121b6499d
+      internalID: 1077183909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_8
+      rect:
+        serializedVersion: 2
+        x: 1688
+        y: 813
+        width: 442
+        height: 519
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6702ef013debf904c990b3df6c8db95f
+      internalID: 352407801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_12
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 116
+        width: 442
+        height: 577
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1df2025aa6282841ba1022215befc8c
+      internalID: 31459012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_13
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 119
+        width: 466
+        height: 544
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690ddb991d2384141980b24ea6c1d473
+      internalID: -105027901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_14
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 151
+        width: 442
+        height: 514
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69c04ff0604e63e4b9c7e4633c4d2d97
+      internalID: -176758163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_15
+      rect:
+        serializedVersion: 2
+        x: 2875
+        y: 136
+        width: 444
+        height: 504
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52681050eed0634c959188ce13d5e6f
+      internalID: 948598725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_16
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 156
+        width: 442
+        height: 494
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea5e6293cb2bd1b47adff0b0f38499b3
+      internalID: 833836230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Choco_Mixing_17
+      rect:
+        serializedVersion: 2
+        x: 4474
+        y: 164
+        width: 442
+        height: 519
+      alignment: 6
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec91376d9319644caf65b0b3afc96f1
+      internalID: 1145103211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +510,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Choco_Mixing_0: 699759789
+      Choco_Mixing_1: -335165863
+      Choco_Mixing_10: 976722810
+      Choco_Mixing_11: -451614958
+      Choco_Mixing_12: 31459012
+      Choco_Mixing_13: -105027901
+      Choco_Mixing_14: -176758163
+      Choco_Mixing_15: 948598725
+      Choco_Mixing_16: 833836230
+      Choco_Mixing_17: 1145103211
+      Choco_Mixing_2: 1117971231
+      Choco_Mixing_3: 1031003685
+      Choco_Mixing_4: -368899345
+      Choco_Mixing_5: 1174444250
+      Choco_Mixing_6: -1356624541
+      Choco_Mixing_7: 1077183909
+      Choco_Mixing_8: 352407801
+      Choco_Mixing_9: 143745083
+      Choco_Mixing___12: -1156639171
+      Choco_Mixing___6: 1884488761
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_1
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 1988
+        width: 864
+        height: 649
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eff884bb908148449f8f2b0542ee036
+      internalID: 2017133409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_2
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 1985
+        width: 690
+        height: 619
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe458b9f32261cb4790ffc91e659c747
+      internalID: 712884421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_3
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 1983
+        width: 620
+        height: 621
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d451ca8fb5087fb4281b3b6a3ff07422
+      internalID: -14823525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_4
+      rect:
+        serializedVersion: 2
+        x: 2984
+        y: 2007
+        width: 594
+        height: 637
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9952f3168e01090479ac21505ccba45f
+      internalID: -511628157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_5
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1109
+        width: 579
+        height: 618
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb528a131e5c0464d9fdb5390c7d33c8
+      internalID: 124824846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_6
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1124
+        width: 578
+        height: 595
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d4abad02b6af33489300791c3bc5e24
+      internalID: -947133306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_7
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 1104
+        width: 612
+        height: 643
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e85ee54182e1ee499a96bc6783e0aed
+      internalID: -1590546705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_8
+      rect:
+        serializedVersion: 2
+        x: 2938
+        y: 1090
+        width: 657
+        height: 652
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e60340f56babc54b908ec6f2db51eef
+      internalID: -1297228155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_9
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 221
+        width: 723
+        height: 649
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1763d8fe504ce034983b5e5be8503582
+      internalID: 1383362579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_11
+      rect:
+        serializedVersion: 2
+        x: 1004
+        y: 212
+        width: 852
+        height: 669
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11a5aa963a21414c8becb07b3bd3d97
+      internalID: 621907901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vanilla_Flavour_SS_13
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 208
+        width: 895
+        height: 655
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c60e2079f3c3d3a4a83ccb8f572b31f0
+      internalID: -1538541444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +363,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Vanilla_Flavour_SS_0: -2124423789
+      Vanilla_Flavour_SS_1: 2017133409
+      Vanilla_Flavour_SS_10: 1553059564
+      Vanilla_Flavour_SS_11: 621907901
+      Vanilla_Flavour_SS_12: 425135372
+      Vanilla_Flavour_SS_13: -1538541444
+      Vanilla_Flavour_SS_2: 712884421
+      Vanilla_Flavour_SS_3: -14823525
+      Vanilla_Flavour_SS_4: -511628157
+      Vanilla_Flavour_SS_5: 124824846
+      Vanilla_Flavour_SS_6: -947133306
+      Vanilla_Flavour_SS_7: -1590546705
+      Vanilla_Flavour_SS_8: -1297228155
+      Vanilla_Flavour_SS_9: 1383362579
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

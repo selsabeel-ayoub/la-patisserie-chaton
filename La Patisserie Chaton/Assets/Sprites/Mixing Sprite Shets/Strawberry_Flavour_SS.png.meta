@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_1
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 1988
+        width: 855
+        height: 654
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14609b12e73b5d44ea1cd66443e9bdc6
+      internalID: 172900689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_2
+      rect:
+        serializedVersion: 2
+        x: 1102
+        y: 1985
+        width: 690
+        height: 619
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323c237da3a027646b69b8cb336d2758
+      internalID: -439744496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_3
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 1983
+        width: 620
+        height: 621
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23564c1edc633f64f89053d93ad8b5f7
+      internalID: 1273988391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_4
+      rect:
+        serializedVersion: 2
+        x: 2984
+        y: 2007
+        width: 594
+        height: 637
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fda70a51d3f49b441a3e0ec85652527a
+      internalID: 1934216366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_5
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1109
+        width: 579
+        height: 618
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea36f2f0d6cae0b499f4a334a58f5bd0
+      internalID: -1859443596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_6
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1124
+        width: 578
+        height: 595
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dbc81acab4c609499cddcdea6a83caf
+      internalID: 755168013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_7
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 1104
+        width: 612
+        height: 643
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 429698886a78e1c4097132f8a4002552
+      internalID: -1968335912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_8
+      rect:
+        serializedVersion: 2
+        x: 2937
+        y: 1090
+        width: 658
+        height: 652
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ab348048584694d92e396b5b650892
+      internalID: 1918260728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_9
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 221
+        width: 723
+        height: 649
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3532bfd14fae37489cea2dcb4c132fb
+      internalID: -982338901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_11
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 212
+        width: 830
+        height: 660
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0367c1c2f9daaf43a51b566fa34e09a
+      internalID: 916485097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Strawberry_Flavour_SS_13
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 208
+        width: 891
+        height: 655
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2662a9902aca64b8b4c9c3f1dc89ad
+      internalID: -605905416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +363,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Strawberry_Flavour_SS_0: -1966341519
+      Strawberry_Flavour_SS_1: 172900689
+      Strawberry_Flavour_SS_10: 1726550781
+      Strawberry_Flavour_SS_11: 916485097
+      Strawberry_Flavour_SS_12: 262544530
+      Strawberry_Flavour_SS_13: -605905416
+      Strawberry_Flavour_SS_2: -439744496
+      Strawberry_Flavour_SS_3: 1273988391
+      Strawberry_Flavour_SS_4: 1934216366
+      Strawberry_Flavour_SS_5: -1859443596
+      Strawberry_Flavour_SS_6: 755168013
+      Strawberry_Flavour_SS_7: -1968335912
+      Strawberry_Flavour_SS_8: 1918260728
+      Strawberry_Flavour_SS_9: -982338901
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

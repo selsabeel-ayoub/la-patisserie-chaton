@@ -165,8 +165,10 @@ public class OrderController : MonoBehaviour
 
         selectedOrderNum = OrderSelection.selectedOrderNum;
 
-        if (selectedOrderNum >= 0 && currentlyMade[0].Count == 3) // && animation is done playing (varibale from other script)
+        if (selectedOrderNum >= 0 && currentlyMade[0].Count == 3 && objectController.assemblyAnimDone) 
         {
+            objectController.assemblyAnimDone = false;
+
             takenOrders[selectedOrderNum].Add((int)Time.time); //adding the current time as the "time sold" for the order
 
 

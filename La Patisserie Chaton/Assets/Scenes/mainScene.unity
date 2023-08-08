@@ -2622,6 +2622,9 @@ MonoBehaviour:
   chocPan_crem: {fileID: 2994543785318048920, guid: df35e29d4b88f6f4bba1edd1bf3ffa64, type: 3}
   strawPan_crem: {fileID: 2876873738748389671, guid: 0b1ea9427d572364bb2e0dc343502486, type: 3}
   burntPan_crem: {fileID: 2725131120684786518, guid: 327553e799e3f16418ff32e2434b4089, type: 3}
+  vanCream: {fileID: 7497987860584026057, guid: 2076c60e4c4a43540a7d05cee34cb38e, type: 3}
+  chocCream: {fileID: 3179213942479551045, guid: a7fe434998ac63146a6c935b985f6c46, type: 3}
+  strawCream: {fileID: 4973329259634749245, guid: 5c208e3cb9a3600499b59a5f95926a3f, type: 3}
 --- !u!4 &948009846
 Transform:
   m_ObjectHideFlags: 0

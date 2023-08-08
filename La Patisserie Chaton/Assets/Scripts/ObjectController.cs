@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 public class ObjectController : MonoBehaviour
 {
     public bool ovenEmpty = true;
+    public bool assemblyAnimDone = false;
 
     [SerializeField] OrderController orderController;
 
@@ -27,6 +28,14 @@ public class ObjectController : MonoBehaviour
     [SerializeField] GameObject strawPan_crem;
     [SerializeField] GameObject burntPan_crem;
 
+    [SerializeField] GameObject vanCream;
+    [SerializeField] GameObject chocCream;
+    [SerializeField] GameObject strawCream;
+
+    Transform cremPan;
+    GameObject creams;
+    Animator topMacAnimator;
+
     int ovenBacklogScreen = 1;
     int ovenSlotScreen = 2;
     int cremBacklogScreen = 4;
@@ -41,6 +50,7 @@ public class ObjectController : MonoBehaviour
 
     int screenIndex;
     int macTypeIndex;
+    int cremTypeIndex;
 
     int macFlavorNum = 3;
     int cremFlavorNum = 3;
@@ -55,6 +65,7 @@ public class ObjectController : MonoBehaviour
     {
         screenIndex = orderController.screenIndex;
         macTypeIndex = orderController.cookieTypeIndex_made;
+        cremTypeIndex = orderController.creamTypeIndex_made;
 
         inOvenObjStartPos = inOvenObj.position;
     }
@@ -116,9 +127,36 @@ public class ObjectController : MonoBehaviour
            cremColliders[x].enabled = false;
         }
 
-        //add cream sprites using 
-        //play closing anim
-        //set bool to true to allow to sell now that anim is done
+
+        if (orderController.currentlyMade[0][cremTypeIndex] == 0)
+        {
+            creams = Instantiate(vanCream);
+        }
+        else if (orderController.currentlyMade[0][cremTypeIndex] == 1)
+        {
+            creams = Instantiate(chocCream);
+        }
+        else
+        {
+            creams = Instantiate(strawCream);
+        }
+
+        cremPan = GameObject.FindWithTag("cremPan").GetComponent<Transform>();
+        creams.transform.SetParent(cremPan);
+
+        for (int x = 0; x < 3; x++)
+        {
+            topMacAnimator = cremPan.GetChild(x).gameObject.GetComponent<Animator>();
+            topMacAnimator.SetBool("isAssembling", true);
+        }
+
+        StartCoroutine(IsAssemblyAnimDone());
+    }
+
+    IEnumerator IsAssemblyAnimDone ()
+    {
+        yield return new WaitForSeconds(1.9f);
+        assemblyAnimDone = true;
     }
 
     public void ResetCream ()
@@ -142,7 +180,7 @@ public class ObjectController : MonoBehaviour
 
     void NextInSlot(int slotScreenNum, int backlogScreenNum, GameObject vanPan, GameObject chocPan, GameObject strawPan, GameObject burntPan)
     {
-        if (CheckScreenNum(slotScreenNum) == -1) //only if there isnt anything in the oven slot right now
+        if (CheckScreenNum(slotScreenNum) == -1) //only if there isnt anything in the slot right now
         {
             int firstInBacklog = CheckScreenNum(backlogScreenNum); //check which index of list is first in backlog and set to firstInBacklog
 
@@ -185,4 +223,5 @@ public class ObjectController : MonoBehaviour
 
         return -1; // if there is no order on this screen
     }
+
 }

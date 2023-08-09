@@ -7,31 +7,31 @@ using UnityEngine.Playables;
 
 public class OrderController : MonoBehaviour
 {
-    [SerializeField] ObjectController objectController;
+    [SerializeField] private ObjectController objectController;
 
-    [SerializeField] int newOrderInterval = 30;
-
-
-    [SerializeField] int scoreMinTime = 30;
-    [SerializeField] int scoreMaxTime = 60;
+    [SerializeField] private int newOrderInterval = 30;
 
 
-    [SerializeField] GameObject newOrderText;
-    [SerializeField] Button orderButton;
-    [SerializeField] Transform canvas;
-    [SerializeField] Text scoreText;
-    [SerializeField] Sprite filledStarSprite;
-    [SerializeField] Sprite emptyStarSprite;
-    [SerializeField] PlayableDirector sellingTimeline;
+    [SerializeField] private int scoreMinTime = 30;
+    [SerializeField] private int scoreMaxTime = 60;
 
 
-    GameObject canvasPanel;
-    GameObject cremPan;
-    [SerializeField] Transform[] orderSlots;
-    [SerializeField] SpriteRenderer[] starSprites;
+    [SerializeField] private GameObject newOrderText;
+    [SerializeField] private Button orderButton;
+    [SerializeField] private Transform canvas;
+    [SerializeField] private Text scoreText;
+    [SerializeField] private Sprite filledStarSprite;
+    [SerializeField] private Sprite emptyStarSprite;
+    [SerializeField] private PlayableDirector sellingTimeline;
+
+
+    private GameObject canvasPanel;
+    private GameObject cremPan;
+    [SerializeField] private Transform[] orderSlots;
+    [SerializeField] private SpriteRenderer[] starSprites;
 
     //2D Lists
-    List<List<int>> newOrders = new List<List<int>>(); // [cat, cookie type, cream type]
+    private List<List<int>> newOrders = new List<List<int>>(); // [cat, cookie type, cream type]
     public List<List<int>> takenOrders = new List<List<int>>(); // [cat, cookie type, cream type, time taken, time sold]
     public List<List<int>> currentlyMade = new List<List<int>>(); // [screen, cookie type, cream type]
 
@@ -45,24 +45,23 @@ public class OrderController : MonoBehaviour
     [HideInInspector] public int catTypeIndex = 0;
     [HideInInspector] public int cookieTypeIndex = 1;
     [HideInInspector] public int creamTypeIndex = 2;
-    int timeTakenIndex = 3;
-    int timeSoldIndex = 4;
+    private int timeTakenIndex = 3;
+    private int timeSoldIndex = 4;
 
 
+    private int totalStars = 0;
+    private int stars = 0;
 
-    int totalStars = 0;
-    int stars = 0;
+    private int flavourNum = 3;
+    private int catTypeNum = 3;
 
-    int flavourNum = 3;
-    int catTypeNum = 3;
+    private int newOrderTextWait = 2;
+    private int newOrderIndex = 0;
+    private int selectedOrderNum;
+    private int slotIndex;
+    private int slotAmt = 9;
 
-    int newOrderTextWait = 2;
-    int newOrderIndex = 0;
-    int selectedOrderNum;
-    int slotIndex;
-    int slotAmt = 9;
-
-    bool newOrderFncExecuted = false;
+    private bool newOrderFncExecuted = false;
     [HideInInspector] public bool canTakeOrder;
 
     private void Start()
@@ -85,7 +84,7 @@ public class OrderController : MonoBehaviour
 
     //Orders that have not been taken yet
     [ContextMenu("Add New Order")]
-    void NewOrder()
+    private void NewOrder()
     {
         int catType = Random.Range(0, catTypeNum); // 0 = calico, 1 = ginger, 2 = grey
         int cookieType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
@@ -105,7 +104,7 @@ public class OrderController : MonoBehaviour
         }
     }
 
-    IEnumerator newOrderUICoroutine ()
+    private IEnumerator newOrderUICoroutine ()
     {
         GameObject newOrderTextObj = Instantiate(newOrderText, canvas);
         yield return new WaitForSeconds(newOrderTextWait);
@@ -204,7 +203,7 @@ public class OrderController : MonoBehaviour
         }
     }
 
-    void Scoring()
+    private void Scoring()
     {
         if (selectedOrder[cookieTypeIndex] == currentlyMade[0][cookieTypeIndex_made]) //Check if cookie type is the same
          {

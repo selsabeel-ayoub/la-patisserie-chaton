@@ -8,38 +8,38 @@ public class ObjectController : MonoBehaviour
     public bool ovenEmpty = true;
     public bool assemblyAnimDone = false;
 
-    [SerializeField] OrderController orderController;
+    [SerializeField] private OrderController orderController;
 
-    [SerializeField] BoxCollider2D[] flavBowlColliders;
-    [SerializeField] BoxCollider2D[] cremColliders;
-    [SerializeField] BoxCollider2D panCollider;
-    [SerializeField] Transform inOvenObj;
+    [SerializeField] private BoxCollider2D[] flavBowlColliders;
+    [SerializeField] private BoxCollider2D[] cremColliders;
+    [SerializeField] private BoxCollider2D panCollider;
+    [SerializeField] private Transform inOvenObj;
 
-    [SerializeField] PlayableDirector bowlsToPanPlayable;
-    [SerializeField] PlayableDirector panToOvenRoomPlayable;
-    [SerializeField] PlayableDirector panToCreamRoomPlayable;
+    [SerializeField] private PlayableDirector bowlsToPanPlayable;
+    [SerializeField] private PlayableDirector panToOvenRoomPlayable;
+    [SerializeField] private PlayableDirector panToCreamRoomPlayable;
 
     //change later to just one gameobject with sprite changing (Gameobject ovenPan)
-    [SerializeField] GameObject vanPan_oven;
-    [SerializeField] GameObject chocPan_oven;
-    [SerializeField] GameObject strawPan_oven;
-    [SerializeField] GameObject vanPan_crem;
-    [SerializeField] GameObject chocPan_crem;
-    [SerializeField] GameObject strawPan_crem;
-    [SerializeField] GameObject burntPan_crem;
+    [SerializeField] private GameObject vanPan_oven;
+    [SerializeField] private GameObject chocPan_oven;
+    [SerializeField] private GameObject strawPan_oven;
+    [SerializeField] private GameObject vanPan_crem;
+    [SerializeField] private GameObject chocPan_crem;
+    [SerializeField] private GameObject strawPan_crem;
+    [SerializeField] private GameObject burntPan_crem;
 
-    [SerializeField] GameObject vanCream;
-    [SerializeField] GameObject chocCream;
-    [SerializeField] GameObject strawCream;
+    [SerializeField] private GameObject vanCream;
+    [SerializeField] private GameObject chocCream;
+    [SerializeField] private GameObject strawCream;
 
-    Transform cremPan;
-    GameObject creams;
-    Animator topMacAnimator;
+    private Transform cremPan;
+    private GameObject creams;
+    private Animator topMacAnimator;
 
-    int ovenBacklogScreen = 1;
-    int ovenSlotScreen = 2;
-    int cremBacklogScreen = 4;
-    int cremSlotScreen = 5;
+    private int ovenBacklogScreen = 1;
+    private int ovenSlotScreen = 2;
+    private int cremBacklogScreen = 4;
+    private int cremSlotScreen = 5;
 
     /*Screens: 0 - mixing room
                1 - waiting for oven slot
@@ -48,17 +48,17 @@ public class ObjectController : MonoBehaviour
                4 - waiting for cream slot
                5 - in cream slot */
 
-    int screenIndex;
-    int macTypeIndex;
-    int cremTypeIndex;
+    private int screenIndex;
+    private int macTypeIndex;
+    private int cremTypeIndex;
 
-    int macFlavorNum = 3;
-    int cremFlavorNum = 3;
+    private int macFlavorNum = 3;
+    private int cremFlavorNum = 3;
 
-    int firstInOvenBacklog;
-    Vector3 inOvenObjStartPos;
+    private int firstInOvenBacklog;
+    private Vector3 inOvenObjStartPos;
 
-    float panToCreamRoomPlayableLen = 2f;
+    private float panToCreamRoomPlayableLen = 2f;
 
 
     private void Start()
@@ -114,7 +114,7 @@ public class ObjectController : MonoBehaviour
         NextCreamSlot();
     }
 
-    IEnumerator ResetInOvenObj ()
+    private IEnumerator ResetInOvenObj ()
     {
         yield return new WaitForSeconds(panToCreamRoomPlayableLen);
         Destroy(inOvenObj.GetChild(0).gameObject);
@@ -153,7 +153,7 @@ public class ObjectController : MonoBehaviour
         StartCoroutine(IsAssemblyAnimDone());
     }
 
-    IEnumerator IsAssemblyAnimDone ()
+    private IEnumerator IsAssemblyAnimDone ()
     {
         yield return new WaitForSeconds(1.9f);
         assemblyAnimDone = true;
@@ -167,7 +167,7 @@ public class ObjectController : MonoBehaviour
         }
     }
 
-    void NextInOvenSlot()
+    private void NextInOvenSlot()
     {
         NextInSlot(ovenSlotScreen, ovenBacklogScreen, vanPan_oven, chocPan_oven, strawPan_oven, null);
     }
@@ -178,7 +178,7 @@ public class ObjectController : MonoBehaviour
     }
 
 
-    void NextInSlot(int slotScreenNum, int backlogScreenNum, GameObject vanPan, GameObject chocPan, GameObject strawPan, GameObject burntPan)
+    private void NextInSlot(int slotScreenNum, int backlogScreenNum, GameObject vanPan, GameObject chocPan, GameObject strawPan, GameObject burntPan)
     {
         if (CheckScreenNum(slotScreenNum) == -1) //only if there isnt anything in the slot right now
         {

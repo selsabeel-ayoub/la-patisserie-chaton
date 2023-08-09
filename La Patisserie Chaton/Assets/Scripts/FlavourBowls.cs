@@ -10,19 +10,17 @@ public class FlavourBowls : MonoBehaviour
 
     [SerializeField] private int flavourType;
     [SerializeField] private Animator mixBowlAnimator;
-    [SerializeField] private PlayableDirector mixBowltoPiping;
+    [SerializeField] private PlayableDirector mixBowlToPiping;
+    [SerializeField] private GameObject pipingObj;
 
     [SerializeField] private SpriteRenderer pipingSpRenderer;
     [SerializeField] private Sprite vanPiping;
     [SerializeField] private Sprite chocPiping;
     [SerializeField] private Sprite strawbPiping;
 
-
-
-
     private int currentIndex = 0;
     private float mixAnimLen = 3f;
-    private float mixPlayableLen = 1.5f;
+    private float mixPlayableLen = 2f;
 
     private void Start()
     {
@@ -62,9 +60,10 @@ public class FlavourBowls : MonoBehaviour
     private IEnumerator waitForPlayable ()
     {
         yield return new WaitForSeconds(mixAnimLen);
-        mixBowltoPiping.Play();
+        mixBowlToPiping.Play();
 
         yield return new WaitForSeconds(mixPlayableLen);
+        pipingObj.GetComponent<DragAndDrop>().enabled = true;
         mixBowlAnimator.SetInteger("flavor", -1);
     }
 

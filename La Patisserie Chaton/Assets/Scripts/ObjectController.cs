@@ -5,19 +5,23 @@ using UnityEngine.Playables;
 
 public class ObjectController : MonoBehaviour
 {
-    public bool ovenEmpty = true;
-    public bool assemblyAnimDone = false;
+    [HideInInspector] public bool ovenEmpty = true;
+    [HideInInspector] public bool assemblyAnimDone = false;
+    [HideInInspector] public bool areMacsPiped = false;
 
     [SerializeField] private OrderController orderController;
 
     [SerializeField] private BoxCollider2D[] flavBowlColliders;
     [SerializeField] private BoxCollider2D[] cremColliders;
     [SerializeField] private BoxCollider2D panCollider;
+    [SerializeField] private BoxCollider2D pipeCollider;
     [SerializeField] private Transform inOvenObj;
 
     [SerializeField] private PlayableDirector bowlsToPanPlayable;
     [SerializeField] private PlayableDirector panToOvenRoomPlayable;
     [SerializeField] private PlayableDirector panToCreamRoomPlayable;
+
+    private float panToOvenRoomPlayableLen = 1.5f;
 
     //change later to just one gameobject with sprite changing (Gameobject ovenPan)
     [SerializeField] private GameObject vanPan_oven;
@@ -32,6 +36,12 @@ public class ObjectController : MonoBehaviour
     [SerializeField] private GameObject chocCream;
     [SerializeField] private GameObject strawCream;
 
+    [SerializeField] private GameObject vanMac;
+    [SerializeField] private GameObject chocMac;
+    [SerializeField] private GameObject strawMac;
+
+    private Transform ovenPan;
+    private GameObject macaron;
     private Transform cremPan;
     private GameObject creams;
     private Animator topMacAnimator;
@@ -51,12 +61,10 @@ public class ObjectController : MonoBehaviour
     private int screenIndex;
     private int macTypeIndex;
     private int cremTypeIndex;
+    private int n;
 
     private int macFlavorNum = 3;
     private int cremFlavorNum = 3;
-
-    private int firstInOvenBacklog;
-    private Vector3 inOvenObjStartPos;
 
     private float panToCreamRoomPlayableLen = 2f;
 
@@ -66,8 +74,6 @@ public class ObjectController : MonoBehaviour
         screenIndex = orderController.screenIndex;
         macTypeIndex = orderController.cookieTypeIndex_made;
         cremTypeIndex = orderController.creamTypeIndex_made;
-
-        inOvenObjStartPos = inOvenObj.position;
     }
 
     public void BowlsToPan ()
@@ -81,8 +87,35 @@ public class ObjectController : MonoBehaviour
         bowlsToPanPlayable.Play();
     }
 
+    public void PipeMacaron()
+    {
+        pipeCollider.enabled = false;
+
+        //make this its own function "instantiateFlavors" + add to "add creams" function + next in slot + FlavourBowls - (3 gameobjects, n)
+
+        n = orderController.currentlyMade.Count - 1;
+
+        if (orderController.currentlyMade[n][macTypeIndex] == 0)
+        {
+            macaron = Instantiate(vanMac);
+        }
+        else if (orderController.currentlyMade[n][macTypeIndex] == 1)
+        {
+            macaron = Instantiate(chocMac);
+        }
+        else
+        {
+            macaron = Instantiate(strawMac);
+        }
+
+        ovenPan = GameObject.FindWithTag("ovenPan").GetComponent<Transform>();
+        macaron.transform.SetParent(ovenPan);
+        areMacsPiped = true;
+    }
+
     public void PanToOvenScreen ()
     {
+        areMacsPiped = false;
         panCollider.enabled = false;
         panToOvenRoomPlayable.Play();
 
@@ -93,6 +126,15 @@ public class ObjectController : MonoBehaviour
 
         orderController.currentlyMade[CheckScreenNum(0)][screenIndex] = 1; //change screen num (0 -> 1)
         NextInOvenSlot();
+
+        StartCoroutine(waitForPanPlayable());
+    }
+
+    private IEnumerator waitForPanPlayable()
+    {
+        yield return new WaitForSeconds(panToOvenRoomPlayableLen);
+        Destroy(macaron);
+        pipeCollider.enabled = true;
     }
 
 

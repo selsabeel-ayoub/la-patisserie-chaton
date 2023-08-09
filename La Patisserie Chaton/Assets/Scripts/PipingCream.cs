@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PipingCream : MonoBehaviour
 {
-    [SerializeField] OrderController orderController;
-    [SerializeField] ObjectController objectController;
+    [SerializeField] private OrderController orderController;
+    [SerializeField] private ObjectController objectController;
 
-    [SerializeField] int flavourType;
+    [SerializeField] private int flavourType;
 
-    bool cremOnPan = false;
+    private bool cremOnPan = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

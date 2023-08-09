@@ -7,7 +7,7 @@ public class DragAndDrop : MonoBehaviour
     bool isDragging = false;
     Vector2 startPos;
 
-    private void Awake()
+    private void Start()
     {
         startPos = gameObject.transform.position;
     }

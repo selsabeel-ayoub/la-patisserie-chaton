@@ -8,6 +8,9 @@ public class PanMoveToOvenRoom : MonoBehaviour
 
     private void OnMouseDown()
     {
-        objectController.PanToOvenScreen();
+        if (objectController.areMacsPiped)
+        {
+            objectController.PanToOvenScreen();
+        }
     }
 }

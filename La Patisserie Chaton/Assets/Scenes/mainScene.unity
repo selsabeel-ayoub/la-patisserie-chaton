@@ -1090,7 +1090,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flavourType: 2
   mixBowlAnimator: {fileID: 1216923960}
-  mixBowltoPiping: {fileID: 369060992}
+  mixBowlToPiping: {fileID: 369060992}
+  pipingObj: {fileID: 1784099671}
   pipingSpRenderer: {fileID: 1784099673}
   vanPiping: {fileID: 1133368748, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
   chocPiping: {fileID: 2025310112, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
@@ -2610,6 +2611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ovenEmpty: 1
   assemblyAnimDone: 0
+  areMacsPiped: 0
   orderController: {fileID: 1238323848}
   flavBowlColliders:
   - {fileID: 981575995}
@@ -2620,6 +2622,7 @@ MonoBehaviour:
   - {fileID: 677922254}
   - {fileID: 1437260377}
   panCollider: {fileID: 1919497646}
+  pipeCollider: {fileID: 1784099677}
   inOvenObj: {fileID: 556561444}
   bowlsToPanPlayable: {fileID: 1717047941}
   panToOvenRoomPlayable: {fileID: 890939540}
@@ -2634,6 +2637,9 @@ MonoBehaviour:
   vanCream: {fileID: 7497987860584026057, guid: 2076c60e4c4a43540a7d05cee34cb38e, type: 3}
   chocCream: {fileID: 3179213942479551045, guid: a7fe434998ac63146a6c935b985f6c46, type: 3}
   strawCream: {fileID: 4973329259634749245, guid: 5c208e3cb9a3600499b59a5f95926a3f, type: 3}
+  vanMac: {fileID: 5428139889744977200, guid: d5c50f9686efb644999b562b1470b656, type: 3}
+  chocMac: {fileID: 8722537388551806102, guid: 67c4fe8f291a18e41890ff3778606bee, type: 3}
+  strawMac: {fileID: 1570013300628996315, guid: 1c247c0a4a1a78b4ea492abfd7893bc2, type: 3}
 --- !u!4 &948009846
 Transform:
   m_ObjectHideFlags: 0
@@ -2793,7 +2799,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flavourType: 0
   mixBowlAnimator: {fileID: 1216923960}
-  mixBowltoPiping: {fileID: 369060992}
+  mixBowlToPiping: {fileID: 369060992}
+  pipingObj: {fileID: 1784099671}
   pipingSpRenderer: {fileID: 1784099673}
   vanPiping: {fileID: 1133368748, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
   chocPiping: {fileID: 2025310112, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
@@ -3282,7 +3289,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flavourType: 1
   mixBowlAnimator: {fileID: 1216923960}
-  mixBowltoPiping: {fileID: 369060992}
+  mixBowlToPiping: {fileID: 369060992}
+  pipingObj: {fileID: 1784099671}
   pipingSpRenderer: {fileID: 1784099673}
   vanPiping: {fileID: 1133368748, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
   chocPiping: {fileID: 2025310112, guid: 5446fc53700d8fa49aaec691f6ced5ef, type: 3}
@@ -3851,8 +3859,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 45621c8c87a1d774b81f2fe24803824e, type: 3}
-  m_Color: {r: 0.8867924, g: 0.8373241, b: 0.8156817, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 949ccb91c122eba4885a1e93f1493444, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -4475,6 +4483,10 @@ GameObject:
   - component: {fileID: 1784099674}
   - component: {fileID: 1784099673}
   - component: {fileID: 1784099672}
+  - component: {fileID: 1784099678}
+  - component: {fileID: 1784099677}
+  - component: {fileID: 1784099676}
+  - component: {fileID: 1784099675}
   m_Layer: 0
   m_Name: Piping Bag
   m_TagString: Untagged
@@ -4570,6 +4582,103 @@ Transform:
   m_Children: []
   m_Father: {fileID: 869396233}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1784099675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784099671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 702fa54c6dfcd934393103d6bfb18f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectController: {fileID: 948009845}
+--- !u!114 &1784099676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784099671}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1784099677
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784099671}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.14128089, y: 0.16482604}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.72, y: 5.74}
+    newSize: {x: 3.72, y: 5.74}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.4374382, y: 5.2219744}
+  m_EdgeRadius: 0
+--- !u!50 &1784099678
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1784099671}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1794812132
 GameObject:
   m_ObjectHideFlags: 0
@@ -4800,7 +4909,7 @@ GameObject:
   - component: {fileID: 1919497645}
   m_Layer: 0
   m_Name: Pan
-  m_TagString: Untagged
+  m_TagString: ovenPan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

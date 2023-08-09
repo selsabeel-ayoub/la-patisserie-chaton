@@ -91,22 +91,9 @@ public class ObjectController : MonoBehaviour
     {
         pipeCollider.enabled = false;
 
-        //make this its own function "instantiateFlavors" + add to "add creams" function + next in slot + FlavourBowls - (3 gameobjects, n)
-
         n = orderController.currentlyMade.Count - 1;
 
-        if (orderController.currentlyMade[n][macTypeIndex] == 0)
-        {
-            macaron = Instantiate(vanMac);
-        }
-        else if (orderController.currentlyMade[n][macTypeIndex] == 1)
-        {
-            macaron = Instantiate(chocMac);
-        }
-        else
-        {
-            macaron = Instantiate(strawMac);
-        }
+        macaron =  InstantiateFlavor(vanMac, chocMac, strawMac, n, macTypeIndex);
 
         ovenPan = GameObject.FindWithTag("ovenPan").GetComponent<Transform>();
         macaron.transform.SetParent(ovenPan);
@@ -169,19 +156,7 @@ public class ObjectController : MonoBehaviour
            cremColliders[x].enabled = false;
         }
 
-
-        if (orderController.currentlyMade[0][cremTypeIndex] == 0)
-        {
-            creams = Instantiate(vanCream);
-        }
-        else if (orderController.currentlyMade[0][cremTypeIndex] == 1)
-        {
-            creams = Instantiate(chocCream);
-        }
-        else
-        {
-            creams = Instantiate(strawCream);
-        }
+        creams = InstantiateFlavor(vanCream, chocCream, strawCream, 0, cremTypeIndex);
 
         cremPan = GameObject.FindWithTag("cremPan").GetComponent<Transform>();
         creams.transform.SetParent(cremPan);
@@ -207,6 +182,27 @@ public class ObjectController : MonoBehaviour
         {
             cremColliders[x].enabled = true;
         }
+    }
+
+
+    private GameObject InstantiateFlavor (GameObject vanilla, GameObject choc, GameObject strawb, int orderIndex, int typeIndex)
+    {
+        GameObject obj;
+
+        if (orderController.currentlyMade[orderIndex][typeIndex] == 0)
+        {
+            obj = Instantiate(vanilla);
+        }
+        else if (orderController.currentlyMade[orderIndex][typeIndex] == 1)
+        {
+            obj = Instantiate(choc);
+        }
+        else
+        {
+            obj = Instantiate(strawb);
+        }
+
+        return obj;
     }
 
     private void NextInOvenSlot()

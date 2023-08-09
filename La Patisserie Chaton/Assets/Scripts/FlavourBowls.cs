@@ -1,15 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class FlavourBowls : MonoBehaviour
 {
     OrderController orderController;
     ObjectController objectController;
 
-    [SerializeField] int flavourType;
-    int currentIndex = 0;
+    [SerializeField] private int flavourType;
+    [SerializeField] private Animator mixBowlAnimator;
+    [SerializeField] private PlayableDirector mixBowltoPiping;
 
+    [SerializeField] private SpriteRenderer pipingSpRenderer;
+    [SerializeField] private Sprite vanPiping;
+    [SerializeField] private Sprite chocPiping;
+    [SerializeField] private Sprite strawbPiping;
+
+
+
+
+    private int currentIndex = 0;
+    private float mixAnimLen = 3f;
+    private float mixPlayableLen = 1.5f;
 
     private void Start()
     {
@@ -22,12 +35,37 @@ public class FlavourBowls : MonoBehaviour
         currentIndex = orderController.currentlyMade.Count;
 
         orderController.currentlyMade.Add(new List<int>());
-
         orderController.currentlyMade[currentIndex].Add(0); // screen
         orderController.currentlyMade[currentIndex].Add(flavourType);
 
         Debug.Log("cookie flavour chosen:" + orderController.currentlyMade[currentIndex][1]);
 
+        mixBowlAnimator.SetInteger("flavor", flavourType);
         objectController.BowlsToPan();
+
+        if (flavourType == 0)
+        {
+            pipingSpRenderer.sprite = vanPiping;
+        }
+        else if (flavourType == 1)
+        {
+            pipingSpRenderer.sprite = chocPiping;
+        }
+        else if (flavourType == 2)
+        {
+            pipingSpRenderer.sprite = strawbPiping;
+        }
+
+        StartCoroutine(waitForPlayable());
     }
+
+    private IEnumerator waitForPlayable ()
+    {
+        yield return new WaitForSeconds(mixAnimLen);
+        mixBowltoPiping.Play();
+
+        yield return new WaitForSeconds(mixPlayableLen);
+        mixBowlAnimator.SetInteger("flavor", -1);
+    }
+
 }

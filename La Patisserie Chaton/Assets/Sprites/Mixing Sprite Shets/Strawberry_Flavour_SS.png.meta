@@ -126,10 +126,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_1
       rect:
         serializedVersion: 2
-        x: 142
-        y: 1988
-        width: 855
-        height: 654
+        x: 154
+        y: 1467
+        width: 655
+        height: 481
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -147,10 +147,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_2
       rect:
         serializedVersion: 2
-        x: 1102
-        y: 1985
-        width: 690
-        height: 619
+        x: 888
+        y: 1464
+        width: 526
+        height: 474
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_3
       rect:
         serializedVersion: 2
-        x: 2052
-        y: 1983
-        width: 620
-        height: 621
+        x: 1613
+        y: 1462
+        width: 475
+        height: 476
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -189,10 +189,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_4
       rect:
         serializedVersion: 2
-        x: 2984
-        y: 2007
-        width: 594
-        height: 637
+        x: 2327
+        y: 1482
+        width: 454
+        height: 485
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -210,10 +210,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_5
       rect:
         serializedVersion: 2
-        x: 292
-        y: 1109
-        width: 579
-        height: 618
+        x: 269
+        y: 793
+        width: 441
+        height: 474
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -231,10 +231,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_6
       rect:
         serializedVersion: 2
-        x: 1201
-        y: 1124
-        width: 578
-        height: 595
+        x: 962
+        y: 806
+        width: 444
+        height: 455
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -252,10 +252,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_7
       rect:
         serializedVersion: 2
-        x: 2058
-        y: 1104
-        width: 612
-        height: 643
+        x: 1617
+        y: 790
+        width: 469
+        height: 492
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -273,10 +273,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_8
       rect:
         serializedVersion: 2
-        x: 2937
-        y: 1090
-        width: 658
-        height: 652
+        x: 2290
+        y: 779
+        width: 506
+        height: 500
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -294,10 +294,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_9
       rect:
         serializedVersion: 2
-        x: 204
-        y: 221
-        width: 723
-        height: 649
+        x: 200
+        y: 116
+        width: 553
+        height: 496
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,10 +315,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_11
       rect:
         serializedVersion: 2
-        x: 1026
-        y: 212
-        width: 830
-        height: 660
+        x: 831
+        y: 108
+        width: 632
+        height: 502
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -336,10 +336,10 @@ TextureImporter:
       name: Strawberry_Flavour_SS_13
       rect:
         serializedVersion: 2
-        x: 1911
-        y: 208
-        width: 891
-        height: 655
+        x: 1501
+        y: 107
+        width: 686
+        height: 462
       alignment: 8
       pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

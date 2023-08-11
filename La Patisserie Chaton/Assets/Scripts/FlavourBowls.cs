@@ -18,6 +18,9 @@ public class FlavourBowls : MonoBehaviour
     [SerializeField] private Sprite chocPiping;
     [SerializeField] private Sprite strawbPiping;
 
+    [SerializeField] private AudioSource pourAudio;
+    [SerializeField] private AudioSource mixAudio;
+
     private int currentIndex = 0;
     private float mixAnimLen = 3f;
     private float mixPlayableLen = 2f;
@@ -59,6 +62,9 @@ public class FlavourBowls : MonoBehaviour
 
     private IEnumerator waitForPlayable ()
     {
+        pourAudio.Play();
+        yield return new WaitForSeconds(1);
+        mixAudio.Play();
         yield return new WaitForSeconds(mixAnimLen);
         mixBowlToPiping.Play();
 

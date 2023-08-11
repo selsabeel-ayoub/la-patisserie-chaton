@@ -7,6 +7,7 @@ public class OrderOnClick : MonoBehaviour
     private OrderController orderController;
     private Animator catAnimator;
     private BoxCollider2D nextCatCollider;
+    private AudioSource talkAudio;
 
     private bool orderTaken = false;
     private bool isCatSlide = false;
@@ -21,6 +22,7 @@ public class OrderOnClick : MonoBehaviour
     {
         orderController = GameObject.FindWithTag("orderController").GetComponent<OrderController>();
         catAnimator = GetComponent<Animator>();
+        talkAudio = GetComponent<AudioSource>();
     }
     private void OnMouseDown()
     {
@@ -86,6 +88,7 @@ public class OrderOnClick : MonoBehaviour
     IEnumerator TalkCoroutine ()
     {
         catAnimator.SetBool("isTalking", true);
+        talkAudio.Play();
         yield return new WaitForSeconds(talkAnimWait);
         catAnimator.SetBool("isTalking", false);
         isCatSlide = true;

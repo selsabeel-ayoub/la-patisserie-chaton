@@ -11,8 +11,7 @@ public class OrderController : MonoBehaviour
 
     [SerializeField] private int newOrderInterval = 30;
 
-    [SerializeField] private int scoreMinTime = 30;
-    [SerializeField] private int scoreMaxTime = 60;
+    [SerializeField] private int scoreMinTime = 60;
 
     [SerializeField] private GameObject newOrderText;
     [SerializeField] private GameObject cantTakeOrderTxt;
@@ -33,7 +32,6 @@ public class OrderController : MonoBehaviour
     [SerializeField] private GameObject greyCat;
 
 
-    private GameObject canvasPanel;
     private GameObject cremPan;
     private GameObject catPrefab;
     private GameObject catObj;
@@ -80,7 +78,7 @@ public class OrderController : MonoBehaviour
 
     private void Start()
     {
-        canvasPanel = GameObject.FindWithTag("orderPanel");
+        NewOrder();
     }
 
     private void Update()
@@ -203,7 +201,7 @@ public class OrderController : MonoBehaviour
     }
 
     [ContextMenu("Sell Order")]
-    public void SellOrder ()
+    public bool SellOrder ()
     {
         for (int i = 0; i < 5; i++) // reset star sprites
         {
@@ -253,7 +251,11 @@ public class OrderController : MonoBehaviour
 
             cremPan = GameObject.FindWithTag("cremPan");
             Destroy(cremPan);
+
+            return true;
         }
+
+        return false;
     }
 
     private void Scoring()
@@ -261,26 +263,30 @@ public class OrderController : MonoBehaviour
         if (selectedOrder[cookieTypeIndex] == currentlyMade[0][cookieTypeIndex_made]) //Check if cookie type is the same
          {
             stars++;
-            Debug.Log("correct cookie flavour");
+            //Debug.Log("correct cookie flavour");
          }
 
         if (selectedOrder[creamTypeIndex] == currentlyMade[0][creamTypeIndex_made]) //Check if cream type is the same
-         {
-             stars ++;
-            Debug.Log("correct cream flavour");
+        {
+            stars ++;
+            //Debug.Log("correct cream flavour");
+        }
+         
+        if (currentlyMade[0][cookieTypeIndex_made] != -1) //Check if not burnt
+        { 
+            stars++;
+            //Debug.Log("not burnt");
         }
 
         if ((selectedOrder[timeSoldIndex] - selectedOrder[timeTakenIndex]) < scoreMinTime)
         {
-            stars += 3; 
-        }
-        else if ((selectedOrder[timeSoldIndex] - selectedOrder[timeTakenIndex]) > scoreMaxTime)
-        {
-            stars ++; 
+            //Debug.Log("full time score");
+            stars += 2; 
         }
         else
         {
-            stars += 2;
+            //Debug.Log("not full time score");
+            stars++; 
         }
 
         for (int i = 0; i < stars; i++)

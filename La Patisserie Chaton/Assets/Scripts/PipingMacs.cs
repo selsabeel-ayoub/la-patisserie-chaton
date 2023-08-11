@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PipingMacs : MonoBehaviour
 {
-    [SerializeField] private ObjectController objectController;
-    private bool pipeOnPan = false;
+    [SerializeField] ObjectController objectController;
+    bool pipeOnPan = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

@@ -172,7 +172,7 @@ public class ObjectController : MonoBehaviour
 
     private IEnumerator IsAssemblyAnimDone ()
     {
-        yield return new WaitForSeconds(1.9f);
+        yield return new WaitForSeconds(1.3f);
         assemblyAnimDone = true;
     }
 

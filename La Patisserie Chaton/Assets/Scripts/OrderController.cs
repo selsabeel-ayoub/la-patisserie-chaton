@@ -11,31 +11,40 @@ public class OrderController : MonoBehaviour
 
     [SerializeField] private int newOrderInterval = 30;
 
-
     [SerializeField] private int scoreMinTime = 30;
     [SerializeField] private int scoreMaxTime = 60;
 
-
     [SerializeField] private GameObject newOrderText;
+    [SerializeField] private GameObject cantTakeOrderTxt;
     [SerializeField] private Button orderButton;
     [SerializeField] private Transform canvas;
     [SerializeField] private Text scoreText;
     [SerializeField] private Sprite filledStarSprite;
     [SerializeField] private Sprite emptyStarSprite;
+    [SerializeField] private Animator sellCatAnim;
     [SerializeField] private PlayableDirector sellingTimeline;
+
+    [SerializeField] private Transform[] orderSlots;
+    [SerializeField] private SpriteRenderer[] starSprites;
+
+    [SerializeField] private Transform catsParent;
+    [SerializeField] private GameObject calicoCat;
+    [SerializeField] private GameObject gingerCat;
+    [SerializeField] private GameObject greyCat;
 
 
     private GameObject canvasPanel;
     private GameObject cremPan;
-    [SerializeField] private Transform[] orderSlots;
-    [SerializeField] private SpriteRenderer[] starSprites;
+    private GameObject catPrefab;
+    private GameObject catObj;
 
     //2D Lists
-    private List<List<int>> newOrders = new List<List<int>>(); // [cat, cookie type, cream type]
+    public List<List<int>> newOrders = new List<List<int>>(); // [cat, cookie type, cream type]
     public List<List<int>> takenOrders = new List<List<int>>(); // [cat, cookie type, cream type, time taken, time sold]
     public List<List<int>> currentlyMade = new List<List<int>>(); // [screen, cookie type, cream type]
 
-    List<int> selectedOrder = new List<int>();
+    private List<int> selectedOrder = new List<int>();
+
 
     [HideInInspector] public int screenIndex = 0;
     [HideInInspector] public int cookieTypeIndex_made = 1;
@@ -48,6 +57,9 @@ public class OrderController : MonoBehaviour
     private int timeTakenIndex = 3;
     private int timeSoldIndex = 4;
 
+    public List<Transform> nextCats = new List<Transform>();
+    private Vector3 catPos = new Vector3(0, 0, 0);
+    private float catDist = -3.8f;
 
     private int totalStars = 0;
     private int stars = 0;
@@ -56,10 +68,12 @@ public class OrderController : MonoBehaviour
     private int catTypeNum = 3;
 
     private int newOrderTextWait = 2;
+    private int cantTakeOrderTextWait = 1;
     private int newOrderIndex = 0;
     private int selectedOrderNum;
     private int slotIndex;
     private int slotAmt = 9;
+
 
     private bool newOrderFncExecuted = false;
     [HideInInspector] public bool canTakeOrder;
@@ -86,21 +100,49 @@ public class OrderController : MonoBehaviour
     [ContextMenu("Add New Order")]
     private void NewOrder()
     {
-        int catType = Random.Range(0, catTypeNum); // 0 = calico, 1 = ginger, 2 = grey
-        int cookieType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
-        int creamType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
-
-        newOrders.Add(new List<int>());
-        newOrders[newOrderIndex].Add(catType);
-        newOrders[newOrderIndex].Add(cookieType);
-        newOrders[newOrderIndex].Add(creamType);
-
-        Debug.Log(newOrderIndex + "cookie type: " + newOrders[newOrderIndex][cookieTypeIndex] + "cream type:" + newOrders[newOrderIndex][creamTypeIndex]);
-        newOrderIndex++;
-
-        if (Time.time != 0)
+        if (nextCats.Count < 8)
         {
-            StartCoroutine(newOrderUICoroutine());
+            int catType = Random.Range(0, catTypeNum); // 0 = calico, 1 = ginger, 2 = grey
+            int cookieType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
+            int creamType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
+
+            newOrders.Add(new List<int>());
+            newOrders[newOrderIndex].Add(catType);
+            newOrders[newOrderIndex].Add(cookieType);
+            newOrders[newOrderIndex].Add(creamType);
+
+            // Debug.Log(newOrderIndex + "cookie type: " + newOrders[newOrderIndex][cookieTypeIndex] + "cream type:" + newOrders[newOrderIndex][creamTypeIndex]);
+            newOrderIndex++;
+
+            if (Time.time != 0)
+            {
+                StartCoroutine(newOrderUICoroutine());
+            }
+
+
+            if (catType == 0)
+            {
+                catPrefab = calicoCat;
+            }
+            else if (catType == 1)
+            {
+                catPrefab = gingerCat;
+            }
+            else
+            {
+                catPrefab = greyCat;
+            }
+
+            catPos.x = catDist * (nextCats.Count);
+            catPos.y = -1;
+            catObj = Instantiate(catPrefab, catPos, Quaternion.identity, catsParent);
+
+            nextCats.Add(catObj.transform);
+
+            if (catObj.transform.GetSiblingIndex() == 0)
+            {
+                catObj.GetComponent<BoxCollider2D>().enabled = true;
+            }
         }
     }
 
@@ -134,7 +176,7 @@ public class OrderController : MonoBehaviour
             newOrders.RemoveAt(0);
             newOrderIndex -= 1;
 
-            Debug.Log("cookie type: " + takenOrders[listLen][cookieTypeIndex] + " cream type:" + takenOrders[listLen][creamTypeIndex]);
+            // Debug.Log("cookie type: " + takenOrders[listLen][cookieTypeIndex] + " cream type: " + takenOrders[listLen][creamTypeIndex]);
 
             for (slotIndex = 0; slotIndex <= slotAmt; slotIndex++)
             {
@@ -149,7 +191,15 @@ public class OrderController : MonoBehaviour
         else
         {
             canTakeOrder = false;
+            StartCoroutine(cantTakeOrderCoroutine());
         }
+    }
+
+    private IEnumerator cantTakeOrderCoroutine()
+    {
+        GameObject cantTakeOrderTxtObj = Instantiate(cantTakeOrderTxt, canvas);
+        yield return new WaitForSeconds(cantTakeOrderTextWait);
+        Destroy(cantTakeOrderTxtObj);
     }
 
     [ContextMenu("Sell Order")]
@@ -170,15 +220,19 @@ public class OrderController : MonoBehaviour
 
             takenOrders[selectedOrderNum].Add((int)Time.time); //adding the current time as the "time sold" for the order
 
+            sellCatAnim.SetInteger("catType", takenOrders[selectedOrderNum][catTypeIndex]) ; //set the sell timeline cat to the correct type
+
 
             selectedOrder = takenOrders[selectedOrderNum]; //this is to compare currentlyMade to it when scoring
             takenOrders.RemoveAt(selectedOrderNum);
+            Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
 
-            if (orderSlots[selectedOrderNum + 1].childCount > 0) // if the UI slot after the sold slot is not empty
+
+            if ((selectedOrderNum != slotAmt - 1) && (orderSlots[selectedOrderNum + 1].childCount > 0)) // if the UI slot after the sold slot is not empty + it is not the last UI slot
             {
                 for (int i = selectedOrderNum + 1; i <= slotAmt; i++)
                 {
-                    if (orderSlots[i].childCount > 0) //if UI slot it being used
+                    if (orderSlots[i].childCount > 0) //if UI slot after is being used
                     {
                         orderSlots[i].GetChild(0).position = orderSlots[i - 1].position; //Move position
 
@@ -191,7 +245,6 @@ public class OrderController : MonoBehaviour
                 }
             }
 
-            Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
 
             Scoring();
             objectController.NextCreamSlot();

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9189072158383965162}
   - component: {fileID: 2622529527200018172}
   - component: {fileID: 468062392467710160}
+  - component: {fileID: 6024504685399615238}
   m_Layer: 0
   m_Name: Ginger Cat
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -2
   m_Sprite: {fileID: -1120546582, guid: f61fa892022998b469cfd8741eff3942, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,7 +115,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5429388808920464127}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -152,3 +153,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.5, y: 8}
   m_EdgeRadius: 0
+--- !u!114 &6024504685399615238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429388808920464127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9493d7001315443b34522042a23b37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

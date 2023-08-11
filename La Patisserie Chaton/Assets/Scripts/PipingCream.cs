@@ -33,7 +33,7 @@ public class PipingCream : MonoBehaviour
         if (cremOnPan == true)
         {
             orderController.currentlyMade[0].Add(flavourType);
-            Debug.Log("cream flavour chosen:" + orderController.currentlyMade[0][2]);
+            // Debug.Log("cream flavour chosen: " + orderController.currentlyMade[0][2]);
 
             objectController.AddCream();
         }

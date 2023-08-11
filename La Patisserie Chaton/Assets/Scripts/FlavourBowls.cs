@@ -36,7 +36,7 @@ public class FlavourBowls : MonoBehaviour
         orderController.currentlyMade[currentIndex].Add(0); // screen
         orderController.currentlyMade[currentIndex].Add(flavourType);
 
-        Debug.Log("cookie flavour chosen:" + orderController.currentlyMade[currentIndex][1]);
+        // Debug.Log("cookie flavour chosen: " + orderController.currentlyMade[currentIndex][1]);
 
         mixBowlAnimator.SetInteger("flavor", flavourType);
         objectController.BowlsToPan();

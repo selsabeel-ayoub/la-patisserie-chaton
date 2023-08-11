@@ -64,17 +64,15 @@ public class OvenDoor : MonoBehaviour
         }
     }
 
-    IEnumerator OvenCoroutine()
+    IEnumerator OvenCoroutine() //Oven Timer
     {
         yield return new WaitForSeconds(1);
         ovenTimerObj = Instantiate(ovenTimer);
 
         yield return new WaitForSeconds(secUntilGreen);
-        Debug.Log("green");
         canTakeOut = true;
 
         yield return new WaitForSeconds(secUntilRed);
-        Debug.Log("red");
         orderInOvenIndex = objectController.CheckScreenNum(3);
         orderController.currentlyMade[orderInOvenIndex][cookieTypeIndex] = -1;
         ovenPanSprite = inOvenObj.GetChild(0).gameObject.GetComponent<SpriteRenderer>();

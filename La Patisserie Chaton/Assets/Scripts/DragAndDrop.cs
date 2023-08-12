@@ -5,12 +5,12 @@ using UnityEngine;
 public class DragAndDrop : MonoBehaviour
 {
     bool isDragging = false;
-    Vector2 startPos;
+    [SerializeField] Vector2 startPos;
 
-    private void Start()
+ /*   private void Start()
     {
         startPos = gameObject.transform.position;
-    }
+    }*/
 
     public void OnMouseDown()
     {

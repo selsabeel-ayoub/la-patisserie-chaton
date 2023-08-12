@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPos: {x: 50, y: -2.9}
 --- !u!114 &169731268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1456,7 +1457,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 41, y: -2.1, z: 0}
-  m_LocalScale: {x: 10, y: 5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1904567582}
@@ -1769,6 +1770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPos: {x: 52, y: -2.9}
 --- !u!114 &677922257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2640,6 +2642,8 @@ PlayableDirector:
     value: {fileID: 1216923960}
   - key: {fileID: -5613982575810434720, guid: 8efc29efc7a99524fa397b1e4155978d, type: 2}
     value: {fileID: 1784099672}
+  - key: {fileID: -4517704120528016801, guid: 8efc29efc7a99524fa397b1e4155978d, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &919170692
@@ -3537,7 +3541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectController: {fileID: 948009845}
-  newOrderInterval: 30
+  newOrderInterval: 33
   scoreMinTime: 30
   newOrderText: {fileID: 3035548203643819729, guid: e187cc9a2f93bc840b166691654df953, type: 3}
   cantTakeOrderTxt: {fileID: 5332352988484479212, guid: 0368b90cc1a646544807a15d43868bd0, type: 3}
@@ -4104,6 +4108,8 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 4149399213877560588, guid: 4e2cb097523d00144815c72371119b72, type: 2}
     value: {fileID: 556561445}
+  - key: {fileID: 4983932036428306079, guid: 4e2cb097523d00144815c72371119b72, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1359112865
@@ -4285,6 +4291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPos: {x: 54, y: -2.9}
 --- !u!114 &1437260380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5261,6 +5268,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c38ed66c3e26b646858b7a51cd4fc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startPos: {x: 16.51, y: -1.9}
 --- !u!61 &1784099677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5701,7 +5709,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.02508545, y: 0.101985455}
+  m_Offset: {x: -0.12665176, y: 0.101985455}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -5712,7 +5720,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.8848114, y: 6.4052067}
+  m_Size: {x: 4.681679, y: 6.4052067}
   m_EdgeRadius: 0
 --- !u!1 &1996619763
 GameObject:
@@ -5795,7 +5803,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_SizeDelta: {x: 1930, y: 1090}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2111337813
 Animator:

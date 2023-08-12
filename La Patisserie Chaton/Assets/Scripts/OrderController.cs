@@ -9,7 +9,7 @@ public class OrderController : MonoBehaviour
 {
     [SerializeField] private ObjectController objectController;
 
-    [SerializeField] private int newOrderInterval = 30;
+    [SerializeField] private int newOrderInterval = 33;
 
     [SerializeField] private int scoreMinTime = 60;
 
@@ -65,6 +65,9 @@ public class OrderController : MonoBehaviour
     private int flavourNum = 3;
     private int catTypeNum = 3;
 
+    private int totalNewOrders = 0;
+    private int newOrderIntervalChange = 3;
+    private int minOrderInterval = 15;
     private int newOrderTextWait = 2;
     private int cantTakeOrderTextWait = 1;
     private int newOrderIndex = 0;
@@ -73,7 +76,7 @@ public class OrderController : MonoBehaviour
     private int slotAmt = 9;
 
 
-    private bool newOrderFncExecuted = false;
+    private bool newOrderFncExecuted = true;
     [HideInInspector] public bool canTakeOrder;
 
     private void Start()
@@ -81,7 +84,7 @@ public class OrderController : MonoBehaviour
         NewOrder();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if (((int)Time.time % newOrderInterval == 0) && (newOrderFncExecuted == false))
         {
@@ -100,6 +103,12 @@ public class OrderController : MonoBehaviour
     {
         if (nextCats.Count < 8)
         {
+            if (newOrderInterval > minOrderInterval && totalNewOrders % 3 == 0) //Every 3 orders, reduce the new order interval
+            {
+                newOrderInterval -= newOrderIntervalChange;
+            }
+            totalNewOrders++;
+
             int catType = Random.Range(0, catTypeNum); // 0 = calico, 1 = ginger, 2 = grey
             int cookieType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
             int creamType = Random.Range(0, flavourNum); // 0 = vanilla, 1 = choc, 2 = strawb
@@ -214,6 +223,7 @@ public class OrderController : MonoBehaviour
 
         if (selectedOrderNum >= 0 && currentlyMade[0].Count == 3 && objectController.assemblyAnimDone) 
         {
+            OrderSelection.selectedOrderNum = -1; //must reset as if it was deselected
             objectController.assemblyAnimDone = false;
 
             takenOrders[selectedOrderNum].Add((int)Time.time); //adding the current time as the "time sold" for the order
@@ -223,12 +233,21 @@ public class OrderController : MonoBehaviour
 
             selectedOrder = takenOrders[selectedOrderNum]; //this is to compare currentlyMade to it when scoring
             takenOrders.RemoveAt(selectedOrderNum);
-            Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
 
+            Scoring();
+            objectController.NextCreamSlot();
+
+            sellingTimeline.Play();
+
+            cremPan = GameObject.FindWithTag("cremPan");
+            Destroy(cremPan);
+
+            //UI
+            Destroy(orderSlots[selectedOrderNum].transform.GetChild(0).gameObject);
 
             if ((selectedOrderNum != slotAmt - 1) && (orderSlots[selectedOrderNum + 1].childCount > 0)) // if the UI slot after the sold slot is not empty + it is not the last UI slot
             {
-                for (int i = selectedOrderNum + 1; i <= slotAmt; i++)
+                for (int i = selectedOrderNum + 1; i < slotAmt; i++)
                 {
                     if (orderSlots[i].childCount > 0) //if UI slot after is being used
                     {
@@ -242,15 +261,6 @@ public class OrderController : MonoBehaviour
                     }
                 }
             }
-
-
-            Scoring();
-            objectController.NextCreamSlot();
-
-            sellingTimeline.Play();
-
-            cremPan = GameObject.FindWithTag("cremPan");
-            Destroy(cremPan);
 
             return true;
         }

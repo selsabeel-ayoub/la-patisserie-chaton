@@ -68,7 +68,7 @@ public class FlavourBowls : MonoBehaviour
         yield return new WaitForSeconds(mixAnimLen);
         mixBowlToPiping.Play();
 
-        yield return new WaitForSeconds(mixPlayableLen);
+        yield return new WaitForSecondsRealtime(mixPlayableLen);
         pipingObj.GetComponent<DragAndDrop>().enabled = true;
         mixBowlAnimator.SetInteger("flavor", -1);
     }
